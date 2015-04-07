@@ -40,4 +40,10 @@ public class Joueur
 		return this.combinaison;
 	}
 
+	public void choisitCouleurPion(Couleur c1, Couleur c2, Couleur c3, Couleur c4)
+	{
+		this.combinaison.set = c1;
+
+	}
+
 }

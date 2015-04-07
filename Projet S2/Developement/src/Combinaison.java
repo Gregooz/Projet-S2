@@ -28,6 +28,18 @@ public class Combinaison
 
 		}
 
+	public setPionCombinaison(Couleur[] couleur)
+	{
+		couleur[1] = "V";
+		couleur[2] = "B";
+		couleur[3] = "R";
+		couleur[4] = "J";
+		for (int i=1;i<=4 ;i++ )
+		{
+			this.pionCombinaisons[i] = couleur[i];
+		}
+	}
+
 
 
 }
