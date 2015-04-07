@@ -42,7 +42,7 @@ public class Joueur
 
 	public void choisitCouleurPion(PionCombinaison p1, PionCombinaison p2, PionCombinaison p3, PionCombinaison p4)
 	{
-		PionCombinaison tableau = new PionCombinaison[4];
+		PionCombinaison[] tableau = new PionCombinaison[4];
 		tableau[1] = p1;
 		tableau[2] = p2;
 		tableau[3] = p3;

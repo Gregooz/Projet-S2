@@ -29,16 +29,23 @@ public class Combinaison
 
 		}
 
-	public void setPionCombinaison(PionCombinaison[] couleur)
-	public void setPionCombinaison(Couleur[] couleur)
+	public void setPionCombinaison(PionCombinaison[] pions)
 	{
-		couleur[1] = new PionCombinaison("V");
-		couleur[2] = new PionCombinaison("J");
-		couleur[3] = new PionCombinaison("B");
-		couleur[4] = new PionCombinaison("R");
+		Couleur couleur = new Couleur("V");		
+		pions[0] = new PionCombinaison(couleur);
+
+		couleur = new Couleur("J");		
+		pions[1] = new PionCombinaison(couleur);
+
+		couleur = new Couleur("R");		
+		pions[2] = new PionCombinaison(couleur);
+
+		couleur = new Couleur("B");		
+		pions[3] = new PionCombinaison(couleur);
+
 		for (int i = 1 ;i <= 4 ; i++)
 		{
-			this.pionCombinaisons[i] = couleur[i];
+			this.pionCombinaisons[i] = pions[i];
 		}
 	}
 

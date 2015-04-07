@@ -9,7 +9,7 @@
 
 
 
-public abstract class Pion
+public  class Pion
 {
 	private Couleur couleur;
 
