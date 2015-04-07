@@ -32,5 +32,6 @@ public class Partie
 	{
 		this.combinaison = this.joueur.getCombi();
 	}
-	
+
+	public 
 }
