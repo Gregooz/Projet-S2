@@ -11,17 +11,16 @@
 
 public class Ordinateur 
 {
-	
+	private Combinaison combinaison;
 /** 
 * Constructeur de la classe Ordinateur
 *@param 
 */
 
-	public Ordinateur()
-		{
-		
-		}
-
+	public Combinaison getCombi()
+	{
+		return this.combinaison;
+	}
 
 
 }

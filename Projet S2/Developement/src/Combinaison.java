@@ -24,7 +24,7 @@ public class Combinaison
 		{
 			this.pionCombinaisons = new PionCombinaison[4];
 			this.pionIndices = new PionIndice[4];
-			this.indices = new Indice[];
+			this.indices = new Indice[4];
 
 		}
 

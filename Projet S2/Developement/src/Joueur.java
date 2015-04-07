@@ -35,6 +35,9 @@ public class Joueur
 		this.pseudo = pseudo;
 	}
 
-
+	public Combinaison getCombi()
+	{
+		return this.combinaison;
+	}
 
 }

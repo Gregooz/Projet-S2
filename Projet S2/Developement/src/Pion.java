@@ -12,14 +12,11 @@
 public abstract class Pion
 {
 	private Couleur couleur;
-/** 
-* Constructeur de la classe Partie
-*@param 
-*/
 
-	public Pion(Couleur couleur)
+
+	public Pion()
 	{
-		this.couleur = couleur;
+		this.couleur = null;
 	}
 
 	public void setPion(Couleur couleur)
