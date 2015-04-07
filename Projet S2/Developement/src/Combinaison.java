@@ -11,7 +11,9 @@
 
 public class Combinaison
 {
-	
+	private Pion[] pions;
+	private Indice[] indices;
+
 /** 
 * Constructeur de la classe Combinaison
 *@param 
@@ -19,7 +21,8 @@ public class Combinaison
 
 	public Combinaison()
 		{
-		
+			this.pions = new Pion[4];
+
 		}
 
 

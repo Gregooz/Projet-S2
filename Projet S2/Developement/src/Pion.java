@@ -11,7 +11,7 @@
 
 public class Pion
 {
-	
+	private Couleur couleur;
 /** 
 * Constructeur de la classe Partie
 *@param 
