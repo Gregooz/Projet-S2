@@ -11,7 +11,8 @@
 
 public class Combinaison
 {
-	private Pion[] pions;
+	private PionCombinaison[] pionCombinaisons;
+	private PionIndice[] pionIndices;
 	private Indice[] indices;
 
 /** 
@@ -21,7 +22,9 @@ public class Combinaison
 
 	public Combinaison()
 		{
-			this.pions = new Pion[4];
+			this.pionCombinaisons = new PionCombinaison[4];
+			this.pionIndices = new PionIndice[4];
+			this.indices = new Indice[];
 
 		}
 
