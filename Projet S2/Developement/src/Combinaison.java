@@ -14,13 +14,14 @@ public class Combinaison
 	private PionCombinaison[] pionCombinaisons;
 	private PionIndice[] pionIndices;
 	private Indice[] indices;
+	private int nombrePion;
 
 /** 
 * Constructeur de la classe Combinaison
 *@param 
 */
 
-	public Combinaison()
+	public Combinaison(int nombrePion)
 		{
 			this.pionCombinaisons = new PionCombinaison[4];
 			this.pionIndices = new PionIndice[4];
@@ -29,6 +30,7 @@ public class Combinaison
 		}
 
 	public void setPionCombinaison(PionCombinaison[] couleur)
+	public void setPionCombinaison(Couleur[] couleur)
 	{
 		couleur[1] = new PionCombinaison("V");
 		couleur[2] = new PionCombinaison("J");
@@ -40,6 +42,12 @@ public class Combinaison
 		}
 	}
 
+	public void setNombrePion(int nombrePion)
+	{
+		this.nombrePion =nombrePion;
+		this.pionCombinaisons = new PionCombinaison[ this.nombrePion ];
+		this.pionIndices = new PionIndice[ this.nombrePion ];
+	}
 
 
 }
