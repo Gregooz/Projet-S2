@@ -11,15 +11,15 @@
 
 public class PionCombinaison extends Pion
 {
-	
+	private Couleur couleur;
 /** 
 * Constructeur de la classe PionCombinaison
 *@param 
 */
 
-	public PionCombinaison()
+	public PionCombinaison(Couleur couleur)
 		{
-		
+			this.couleur = couleur;
 		}
 
 

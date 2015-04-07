@@ -17,7 +17,7 @@ public class Couleur
 *@param 
 */
 
-	public Couleur()
+	public Couleur(String couleur)
 	{
 		this.couleur = couleur;
 	}

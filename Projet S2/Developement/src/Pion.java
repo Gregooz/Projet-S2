@@ -14,9 +14,9 @@ public abstract class Pion
 	private Couleur couleur;
 
 
-	public Pion()
+	public Pion(Couleur couleur)
 	{
-		this.couleur = null;
+		this.couleur = couleur;
 	}
 
 	public void setPion(Couleur couleur)
