@@ -12,16 +12,18 @@
 public class Joueur
 {
 	private String pseudo;
+	private Combinaison combinaison;
 /** 
 * Constructeur de la classe Joueur
 *@param Pseudo Pseudo du joueur
-*@param Num Le numéro du joueur, Joueur 1 corespond a celui qui créer une combinaison secrète.
+*
 */
 
 	public Joueur(String pseudo)
 		{
 			this.pseudo = pseudo;
 		}
+
 
 
 
