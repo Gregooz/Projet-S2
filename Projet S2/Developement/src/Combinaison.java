@@ -13,7 +13,6 @@ public class Combinaison
 {
 	private Pion[] pionCombinaisons;
 	private PionIndice[] pionIndices;
-	private Indice[] indices;
 	private int nombrePion;
 	public static final String BACK_WHITE = "\u001B[47m";
 	public static final String RESET = "\u001B[0m";
@@ -29,7 +28,6 @@ public class Combinaison
 			this.nombrePion = nombrePion;
 			this.pionCombinaisons = new Pion[nombrePion];
 			this.pionIndices = new PionIndice[nombrePion];
-			this.indices = new Indice[nombrePion];
 		}
 
 	public Combinaison()
@@ -39,10 +37,17 @@ public class Combinaison
 
 	public void setPionCombinaison(Pion[] pions)
 	{		
+		//System.out.println(pions[0]);
+		//System.out.println(pions[1]);
+		//System.out.println(pions[2]);
+		//System.out.println(pions[3]);		
 
 		for (int i = 0 ;i < this.nombrePion ; i++)
 		{
+			//System.out.println(i);
+
 			this.pionCombinaisons[i] = pions[i];
+
 		}
 	}
 
@@ -50,7 +55,6 @@ public class Combinaison
 	{
 		this.nombrePion =nombrePion;
 		this.pionCombinaisons = new PionCombinaison[ this.nombrePion ];
-		this.pionIndices = new PionIndice[ this.nombrePion ];
 	}
 
 	public int getNombrePion()
@@ -69,5 +73,9 @@ public class Combinaison
 		return chaine;	
 	}
 
+	public Couleur getCouleur(int indice)
+	{
+		return pionCombinaisons[indice].getCouleur();
+	}
 
 }

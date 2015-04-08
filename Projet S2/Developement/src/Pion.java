@@ -33,4 +33,9 @@ public  class Pion
 	{
 		return(this.couleur.toString() + "■");
 	}
+
+	public Couleur getCouleur()
+	{
+		return this.couleur;
+	}
 }

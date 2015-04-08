@@ -43,6 +43,12 @@ public class Couleur
 		this.couleur = couleur;
 	}
 
+	public boolean equals(Couleur coul)
+	{
+		return this.couleur == coul.couleur;
+	}
+
+
 	public String toString()
 	{
 		if (this.couleur == "noir")

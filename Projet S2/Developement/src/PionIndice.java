@@ -17,9 +17,9 @@ public class PionIndice extends Pion
 *@param 
 */
 
-	public PionIndice()
+	public PionIndice(Couleur couleur)
 		{
-			super();
+			super(couleur);
 		}
 
 
