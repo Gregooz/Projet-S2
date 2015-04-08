@@ -8,7 +8,6 @@
 
 
 
-
 public class Mastermind
 {	
 
@@ -34,5 +33,14 @@ public class Mastermind
 		System.out.println(partie);
 		//partie.choixCombi();
 
+
+		String entres = "";
+		System.out.println("Entre les couleurs de ta combinaison: ");
+		for ( int i =0 ; i < partie.getNombrePion() ; i++ ) 
+		{
+			System.out.println(i + " couleur: ");
+			entres = Clavier.readString();
+		}
+		//partie.getCombiJoueur()
 	}
 }

@@ -52,9 +52,14 @@ public class Partie
 	}
 
 
-	private void getCombiJoueur()
+	public void getCombiJoueur()
 	{
 		this.combinaisonSecrete = this.joueur.getCombi();
+	}
+
+	public int getNombrePion()
+	{
+		return this.combinaisonSecrete.getNombrePion();
 	}
 
 
@@ -89,4 +94,5 @@ public class Partie
 		}
 		return ("\nPartie:\nJoueur: "+this.joueur.getPseudo() +"    nbToursMax: "+this.nbToursMax + chaine);
 	}
+
 }

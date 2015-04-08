@@ -56,5 +56,10 @@ public class Combinaison
 		this.pionIndices = new PionIndice[ this.nombrePion ];
 	}
 
+	public int getNombrePion()
+	{
+		return this.nombrePion;
+	}
+
 
 }
