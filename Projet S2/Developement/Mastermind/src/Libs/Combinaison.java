@@ -11,57 +11,62 @@
 
 public class Combinaison
 {
-	private PionCombinaison[] pionCombinaisons;
+	private Pion[] pionCombinaisons;
 	private PionIndice[] pionIndices;
 	private Indice[] indices;
 	private int nombrePion;
+	public static final String BACK_WHITE = "\u001B[47m";
+	public static final String RESET = "\u001B[0m";
+	public static final String BRIGHT = "\u001B[1m";
 
 /** 
 * Constructeur de la classe Combinaison
-*@param nombrePion Le nombre de pions que l'on veut rentrer pour la combinaison (Difficulté)
+*@param 
 */
 
 	public Combinaison(int nombrePion)
-	{
-		this.pionCombinaisons = new PionCombinaison[4];
-		this.pionIndices = new PionIndice[4];
-		this.indices = new Indice[4];
+		{
+			this.nombrePion = nombrePion;
+			this.pionCombinaisons = new Pion[nombrePion];
+			this.pionIndices = new PionIndice[nombrePion];
+			this.indices = new Indice[nombrePion];
+		}
 
+	public Combinaison()
+	{
+		this(4);
 	}
 
-/**
- * Méthode qui paramètre une combinaison par défaut
- * @param pions Un tableau contenant 4 couleurs
- */
-	public void setPionCombinaison(PionCombinaison[] pions)
-	{
-		Couleur couleur = new Couleur("V");		
-		pions[0] = new PionCombinaison(couleur);
+	public void setPionCombinaison(Pion[] pions)
+	{		
 
-		couleur = new Couleur("J");		
-		pions[1] = new PionCombinaison(couleur);
-
-		couleur = new Couleur("R");		
-		pions[2] = new PionCombinaison(couleur);
-
-		couleur = new Couleur("B");		
-		pions[3] = new PionCombinaison(couleur);
-
-		for (int i = 1 ;i <= 4 ; i++)
+		for (int i = 0 ;i < this.nombrePion ; i++)
 		{
 			this.pionCombinaisons[i] = pions[i];
 		}
 	}
 
-/**
- * Méthode qui change le nombre de pions pour la difficulté
- * @param nombrePion Le nombre de pions que l'on veut dans la combinaisons
- */
 	public void setNombrePion(int nombrePion)
 	{
 		this.nombrePion =nombrePion;
 		this.pionCombinaisons = new PionCombinaison[ this.nombrePion ];
 		this.pionIndices = new PionIndice[ this.nombrePion ];
+	}
+
+	public int getNombrePion()
+	{
+		return this.nombrePion;
+	}
+
+	public String toString()
+	{
+		String chaine = "";
+		for (int i=0;i < this.nombrePion; i++) 
+		{
+			chaine = BRIGHT + chaine + BACK_WHITE +" "+ pionCombinaisons[i].toString();
+		}
+		chaine = chaine + RESET;
+		return chaine;	
 	}
 
 

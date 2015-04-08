@@ -11,7 +11,7 @@
 
 public class Combinaison
 {
-	private PionCombinaison[] pionCombinaisons;
+	private Pion[] pionCombinaisons;
 	private PionIndice[] pionIndices;
 	private Indice[] indices;
 	private int nombrePion;
@@ -27,7 +27,7 @@ public class Combinaison
 	public Combinaison(int nombrePion)
 		{
 			this.nombrePion = nombrePion;
-			this.pionCombinaisons = new PionCombinaison[nombrePion];
+			this.pionCombinaisons = new Pion[nombrePion];
 			this.pionIndices = new PionIndice[nombrePion];
 			this.indices = new Indice[nombrePion];
 		}
@@ -37,7 +37,7 @@ public class Combinaison
 		this(4);
 	}
 
-	public void setPionCombinaison(PionCombinaison[] pions)
+	public void setPionCombinaison(Pion[] pions)
 	{		
 
 		for (int i = 0 ;i < this.nombrePion ; i++)
@@ -60,7 +60,7 @@ public class Combinaison
 
 	public String toString()
 	{
-		String chaine = "La combinaison:";
+		String chaine = "";
 		for (int i=0;i < this.nombrePion; i++) 
 		{
 			chaine = BRIGHT + chaine + BACK_WHITE +" "+ pionCombinaisons[i].toString();

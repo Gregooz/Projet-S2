@@ -14,14 +14,13 @@ public class PionCombinaison extends Pion
 	
 /** 
 * Constructeur de la classe PionCombinaison
-*@param couleur La couleur du pion
+*@param 
 */
 
 	public PionCombinaison(Couleur couleur)
 	{
-			super(couleur);
+		super(couleur);
 	}
 
-	
 
 }

@@ -31,6 +31,6 @@ public  class Pion
 
 	public String toString()
 	{
-		return(this.couleur.toString() + "O");
+		return(this.couleur.toString() + "■");
 	}
 }
