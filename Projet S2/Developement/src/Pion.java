@@ -32,6 +32,6 @@ public  class Pion
 
 	public String toString()
 	{
-		return("Le pion est de la couleur " + this.couleur);
+		return("O");
 	}
 }

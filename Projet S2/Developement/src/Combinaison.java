@@ -30,20 +30,9 @@ public class Combinaison
 		}
 
 	public void setPionCombinaison(PionCombinaison[] pions)
-	{
-		Couleur couleur = new Couleur("V");		
-		pions[0] = new PionCombinaison(couleur);
+	{		
 
-		couleur = new Couleur("J");		
-		pions[1] = new PionCombinaison(couleur);
-
-		couleur = new Couleur("R");		
-		pions[2] = new PionCombinaison(couleur);
-
-		couleur = new Couleur("B");		
-		pions[3] = new PionCombinaison(couleur);
-
-		for (int i = 1 ;i <= 4 ; i++)
+		for (int i = 1 ;i < this.nombrePion ; i++)
 		{
 			this.pionCombinaisons[i] = pions[i];
 		}
@@ -59,6 +48,17 @@ public class Combinaison
 	public int getNombrePion()
 	{
 		return this.nombrePion;
+	}
+
+	public String toString()
+	{
+		String chaine = "";
+		for (int i=0;i < this.nombrePion ; ) 
+		{
+			chaine = chaine +"  "+ pionCombinaisons[i].toString();
+		}
+
+		return chaine;	
 	}
 
 

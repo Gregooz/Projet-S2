@@ -23,6 +23,9 @@ public class Mastermind
 			// -> Ajouter les couleurs
 		partie.setNombrePion(4);
 
+
+
+			// Le joueur choisit les couleurs disponibles dans la partie 
 		Couleur[] couleur = new Couleur[5];
 		for (int i = 0; i <= 4; i++)
 		{ 
@@ -34,7 +37,7 @@ public class Mastermind
 		//partie.choixCombi();
 
 
-
+				// Le joueur choisit les pions dans sa combinaisons.
 		// Un truc beaucoup mieux que ça !
 
 		String entres = "";
@@ -48,7 +51,16 @@ public class Mastermind
 
 		System.out.println("Entre les couleurs de ta combinaison: ");
 
+			
+
+			// Craquage du code par l'ordinateur
+		boolean trouve=false;
+		while (!trouve)
+		{
+			trouve = partie.combiEquivalente(); //--> Fait que l'ordinateur propose une combi et teste si c'est vrai.
 			// Affiche les propositions déjà proposés.
-		partie.affichage();
+			partie.affichage();
+		}
+		
 	}
 }
