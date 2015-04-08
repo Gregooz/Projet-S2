@@ -79,4 +79,14 @@ public class Partie
 
 		return trouve;
 	}
+
+	public String toString()
+	{
+		String chaine = "";
+		for (int i = 0; i< couleurs.length ; i++ ) 
+		{
+			chaine = chaine + "\nCouleurs " + i + ": " + couleurs[i];
+		}
+		return ("\nPartie:\nJoueur: "+this.joueur.getPseudo() +"    nbToursMax: "+this.nbToursMax + chaine);
+	}
 }

@@ -11,7 +11,6 @@
 
 public class PionCombinaison extends Pion
 {
-	private Couleur couleur;
 	
 /** 
 * Constructeur de la classe PionCombinaison
@@ -20,7 +19,7 @@ public class PionCombinaison extends Pion
 
 	public PionCombinaison(Couleur couleur)
 	{
-			this.couleur = couleur;
+			super(couleur);
 	}
 
 	

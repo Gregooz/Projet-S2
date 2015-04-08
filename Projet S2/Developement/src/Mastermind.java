@@ -30,6 +30,8 @@ public class Mastermind
 			couleur[i] = new Couleur("C"+i);
 		}
 		partie.setCouleursDisp(couleur);
+		partie.toString();
+		//partie.choixCombi();
 
 	}
 }

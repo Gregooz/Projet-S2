@@ -19,6 +19,12 @@ public  class Pion
 		this.couleur = couleur;
 	}
 
+	public Pion()
+	{
+		Couleur coul = new Couleur("B");
+		this.couleur = couleur;
+	}
+
 	public void setPion(Couleur couleur)
 	{
 		this.couleur = couleur;
