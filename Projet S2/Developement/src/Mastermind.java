@@ -36,7 +36,7 @@ public class Mastermind
 
 
 		// Un truc beaucoup mieux que ça !
-		
+
 		String entres = "";
 		System.out.println("Entre les couleurs de ta combinaison: ");
 		for ( int i =0 ; i < partie.getNombrePion() ; i++ ) 
@@ -46,6 +46,9 @@ public class Mastermind
 		}
 		//partie.getCombiJoueur()
 
+		System.out.println("Entre les couleurs de ta combinaison: ");
 
+			// Affiche les propositions déjà proposés.
+		partie.affichage();
 	}
 }
