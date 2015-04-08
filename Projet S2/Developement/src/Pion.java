@@ -11,8 +11,7 @@
 
 public  class Pion
 {
-	private Couleur couleur;
-
+	private Couleur couleur;	
 
 	public Pion(Couleur couleur)
 	{
@@ -32,6 +31,6 @@ public  class Pion
 
 	public String toString()
 	{
-		return("O");
+		return(this.couleur.toString() + "O");
 	}
 }

@@ -19,7 +19,7 @@ public class PionCombinaison extends Pion
 
 	public PionCombinaison(Couleur couleur)
 	{
-			super(couleur);
+		super(couleur);
 	}
 
 
