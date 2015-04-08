@@ -31,4 +31,9 @@ public class Couleur
 	{
 		this.couleur = couleur;
 	}
+
+	public String toString()
+	{
+		return this.couleur;
+	}
 }

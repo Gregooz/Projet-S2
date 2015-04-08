@@ -16,7 +16,6 @@ public class Partie
 	private Ordinateur ordinateur;
 	private int nbToursMax;
 	private Couleur[] couleurs;	// Couleurs disponibles
-	private int nombrePionMax;
 
 /** 
 *Constructeur de la classe Partie
@@ -29,6 +28,7 @@ public class Partie
 		this.joueur = joueur;
 		this.nbToursMax = nbToursMax;
 		this.ordinateur = new Ordinateur();
+		this.combinaisonSecrete = new Combinaison(4);
 	}
 
 

@@ -19,18 +19,19 @@ public class Mastermind
 
 		Partie partie = new Partie(j1,5);
 		// Joueur choisit les paramètres
-			// nombre de pion dans la cbS
+			// nombre de pion dans la cbS -> par défaut 4 sinon il faut utiliser setNombrePion
 			// Choisit les couleurs disponibles
 			// -> Ajouter les couleurs
 		partie.setNombrePion(4);
 
 		Couleur[] couleur = new Couleur[5];
-		for (int i = 0; i <4; i++)
+		for (int i = 0; i <= 4; i++)
 		{ 
 			couleur[i] = new Couleur("C"+i);
 		}
 		partie.setCouleursDisp(couleur);
 		partie.toString();
+		System.out.println(partie);
 		//partie.choixCombi();
 
 	}
