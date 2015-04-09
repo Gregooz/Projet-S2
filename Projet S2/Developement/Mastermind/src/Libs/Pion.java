@@ -20,8 +20,7 @@ public  class Pion
 
 	public Pion()
 	{
-		Couleur coul = new Couleur("B");
-		this.couleur = couleur;
+		this.couleur = Couleur.BLUE;
 	}
 
 	public void setPion(Couleur couleur)
@@ -31,6 +30,6 @@ public  class Pion
 
 	public String toString()
 	{
-		return(this.couleur.toString() + "■");
+		return(this.couleur + "■");
 	}
 }
