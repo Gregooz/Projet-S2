@@ -1,4 +1,4 @@
-package strategy.implementations;
+package CPU.implementations;
 
 import strategy.Answer;
 import strategy.Code;

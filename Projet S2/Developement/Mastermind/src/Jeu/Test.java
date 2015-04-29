@@ -1,4 +1,4 @@
-package simulation;
+package Jeu;
 
 import strategy.implementations.*;
 

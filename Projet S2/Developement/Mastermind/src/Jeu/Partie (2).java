@@ -8,7 +8,7 @@ import strategy.Code;
 *@version 1.0
 *
 */
-
+package Jeu;
 
 
 

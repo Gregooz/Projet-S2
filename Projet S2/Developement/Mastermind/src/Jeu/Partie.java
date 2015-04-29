@@ -5,8 +5,7 @@
 *@version 1.0
 *
 */
-
-
+package Jeu;
 
 
 public class Partie

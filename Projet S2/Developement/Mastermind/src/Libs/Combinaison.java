@@ -6,7 +6,7 @@
 *
 */
 
-
+package Libs;
 
 
 public class Combinaison

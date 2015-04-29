@@ -1,4 +1,4 @@
-package strategy.implementations;
+package CPU.implementations;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -5,9 +5,9 @@
 *@version 1.0
 *
 */
+package Jeu;
 
-
-
+import java.*;
 
 public class Mastermind
 {	

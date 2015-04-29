@@ -1,4 +1,4 @@
-package simulation;
+package Jeu;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
