@@ -6,13 +6,14 @@
 *
 */
 package Jeu;
-
+import Libs.*;
+import CPU.implementations.BasicStrategy;
 
 public class Partie
 {
 	private Joueur joueur;
 	private Combinaison combinaison;
-	private Ordinateur ordinateur;
+	private BasicStrategy ordinateur;
 	private int nbToursMax;
 /** 
 *Constructeur de la classe Partie
@@ -34,7 +35,7 @@ public class Partie
 	{
 		this.joueur = new Joueur("Joueur1");
 		this.nbToursMax = 8;
-		this.ordinateur = new Ordinateur();
+		this.ordinateur = new BasicStrategy();
 	}
 
 /**

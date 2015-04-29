@@ -7,7 +7,8 @@
 */
 package Jeu;
 
-import java.*;
+import Libs.Joueur;
+import Libs.Couleur;
 
 public class Mastermind
 {	
@@ -24,11 +25,6 @@ public class Mastermind
 			// -> Ajouter les couleurs
 		partie.setNombrePion(4);
 
-		Couleur[] couleur = new Couleur[5];
-		for (int i = 0; i <4; i++)
-		{ 
-			couleur[i] = new Couleur("C"+i);
-		}
 		partie.setCouleursDisp(couleur);
 		partie.toString();
 		//partie.choixCombi();
