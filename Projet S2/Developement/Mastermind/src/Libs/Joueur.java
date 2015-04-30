@@ -25,6 +25,7 @@ public class Joueur
 	public Joueur(String pseudo)
 	{
 		this.pseudo = pseudo;
+		this.combinaison = new Combinaison();
 	}
 
 	public String getPseudo()
@@ -54,4 +55,14 @@ public class Joueur
 
 	}
 
+	public void setCombi(Combinaison c)
+	{
+		this.combinaison = c;
+	}
+
+	public void setNbPion(int nb) {
+		
+		this.combinaison.setNombrePion(nb);
+	}
+	
 }

@@ -43,20 +43,66 @@ public class Partie
 /**
  * Changer la combinaison
  */
-	private void setCombiJoueur()
+	public void setCombiJoueur()
 	{
+		
 		this.combinaison = this.joueur.getCombi();
+		
 	}
+
+	public int getNbPion()
+	{
+		return this.joueur.getCombi().getNombrePion();
+	}
+/** 
+*- Test l'equivalence de la dernière combi récup
+ - renvoi vrai si les meme
+ - ajoute une combi de pion indice pour lesquels pions sont bien placés
+*@return Retourne Vrai si la combinaison Ã  Ã©tÃ© trouvÃ© Faux si non.
+*/
+	public boolean testEquivalence() {
+		/* - Test l'equivalence de la dernière combi récup
+		   - renvoi vrai si les meme
+		   - ajoute une combi de pion indice pour lesquels pions sont bien placés
+		  */
+		return false;
+		
+	}
+	
+	/** 
+	*- Recupère la solution de l'ordi et l'ajoute dans les anciennes combi
+	*
+	*/
+	public void combiOrdinateur() {
+		/* Recupère la solution de l'ordi et l'ajoute dans les anciennes combi
+		 */
+		 
+	}
+
+public void setNbPion(int nb) {
+	this.joueur.setNbPion(nb);
+	
+}
 
 
 /** 
-*MÃ©thode Ã©quivalente Ã  un 'main' de la partie
-*@return Retourne Vrai si la combinaison Ã  Ã©tÃ© trouvÃ© Faux si non.
+*    - afficher la combi du joueur
+*    - afficher toutes les combi de l'ordi
+*	 -afficher nb d'essais
+*	 -( afficher score)
+*	 - affiche les indices
 */
-	public boolean loop() // A voir pour changer le nom de la mÃ©thode
-	{
-		return false;
-		
+public void affichage() {
+	/* afficher la combi du joueur
+	 - afficher toutes les combi de l'ordi
+	 -afficher nb d'essais
+	 -( afficher score)
+	 -affiche les indices
+	 
+	*/ 
+	
+	
+	
 	}
 
 }

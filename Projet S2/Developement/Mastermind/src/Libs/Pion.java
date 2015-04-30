@@ -30,6 +30,6 @@ public  class Pion
 
 	public String toString()
 	{
-		return(this.couleur + "â– ");
+		return(this.couleur + "O ");
 	}
 }

@@ -23,7 +23,7 @@ public class Combinaison
 * Constructeur de la classe Combinaison
 *@param 
 */
-
+	
 	public Combinaison(int nombrePion)
 		{
 			this.nombrePion = nombrePion;
