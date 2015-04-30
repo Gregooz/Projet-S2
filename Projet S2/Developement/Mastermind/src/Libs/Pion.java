@@ -32,4 +32,9 @@ public  class Pion
 	{
 		return(this.couleur + "O ");
 	}
+	
+	public Couleur getCouleur() {
+		return this.couleur;
+	}
+	
 }
