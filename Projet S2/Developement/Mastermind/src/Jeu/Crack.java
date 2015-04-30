@@ -1,15 +1,15 @@
 package Jeu;
 
-import strategy.implementations.*;
+import CPU.implementations.*;
 import Main.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import strategy.Answer;
-import strategy.Code;
-import strategy.IMastermindStrategy;
-import strategy.T;
+import CPU.Answer;
+import CPU.Code;
+import CPU.IMastermindStrategy;
+import CPU.T;
 
 
 public class Crack {

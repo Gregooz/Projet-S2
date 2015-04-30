@@ -7,6 +7,8 @@
 */
 package Libs;
 
+import Jeu.Partie;
+
 
 
 public class Joueur

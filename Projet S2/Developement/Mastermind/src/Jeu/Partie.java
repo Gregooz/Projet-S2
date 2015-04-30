@@ -7,13 +7,15 @@
 */
 package Jeu;
 import Libs.*;
+import CPU.Answer;
+import CPU.Code;
 import CPU.implementations.BasicStrategy;
 
 public class Partie
 {
 	private Joueur joueur;
 	private Combinaison combinaison;
-	private BasicStrategy ordinateur;
+	//private BasicStrategy ordinateur;
 	private int nbToursMax;
 /** 
 *Constructeur de la classe Partie
@@ -25,7 +27,7 @@ public class Partie
 	{
 		this.joueur = new Joueur("Joueur1");
 		this.nbToursMax = nbToursMax;
-		this.ordinateur = new Ordinateur();
+		//this.ordinateur = new Ordinateur();
 	}
 
 /**
@@ -35,7 +37,7 @@ public class Partie
 	{
 		this.joueur = new Joueur("Joueur1");
 		this.nbToursMax = 8;
-		this.ordinateur = new BasicStrategy();
+		//this.ordinateur = new BasicStrategy();
 	}
 
 /**
@@ -53,19 +55,8 @@ public class Partie
 */
 	public boolean loop() // A voir pour changer le nom de la méthode
 	{
-		int nbTours = 0;
-		boolean trouve = false;
-
-		Combinaison[] combinaison_p = new Combinaison[ this.nbToursMax];
-
-		while ( nbTours <= this.nbToursMax || !trouve)
-		{
-			combinaison_p[ nbTours ] = this.ordinateur.getCombi();
-
-			trouve = (this.combinaison.equals( combinaison_p [nbTours ]) );
-
-		}
-
-		return trouve;
+		return false;
+		
 	}
+
 }
