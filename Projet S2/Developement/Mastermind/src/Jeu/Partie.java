@@ -71,6 +71,8 @@ public class Partie
 		   - renvoi vrai si les meme
 		   - ajoute une combi de pion indice pour lesquels pions sont bien placés
 		  */
+		this.combi_indice[this.numero_tour] = new Combinaison(Couleur.RED,Couleur.RED,Couleur.RED,Couleur.RED);
+		
 		boolean retour = false;
 		if ( this.combi_Enregistrer[this.numero_tour].equals(this.combinaison)){
 			retour = true;
@@ -100,6 +102,7 @@ public class Partie
 		//this.combi_test[ this.combi_test.lenght() ] = this.ordinateur.getCombiCreer(); ?
 		Combinaison comb_test = new Combinaison( this.joueur.getCombi().getNombrePion());
 		comb_test.test();
+		
 		this.combi_Enregistrer[ this.numero_tour] = comb_test;
 		this.numero_tour ++;
 		 
@@ -127,11 +130,13 @@ public void affichage() {
 	 
 	*/ 
 	System.out.println("+ - - - Tour "+ this.numero_tour+ " - - - +\n");
-	System.out.println("                    Votre Combi: "+ this.combinaison.toString());
+	System.out.println("                    						Votre Combi: "+ this.combinaison.toString());
 	String chaine = this.numero_tour +" ";
+	
 	for (int i =0; i< this.numero_tour;i++)
-	{
-		chaine = chaine + this.combi_Enregistrer[i] + "    " + this.combi_indice[i] +"\n";
+	{	System.out.println(i);
+
+		chaine = chaine + this.combi_Enregistrer[i] ;//+ "    " + this.combi_indice[i] +"\n";
 	}
 	System.out.println(chaine);
 	if (testEquivalence()){

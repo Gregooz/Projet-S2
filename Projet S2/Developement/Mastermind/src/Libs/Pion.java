@@ -37,4 +37,15 @@ public  class Pion
 		return this.couleur;
 	}
 	
+	public boolean equals(Pion p) {
+		
+		boolean retour = false;
+		Couleur couleur = p.getCouleur();
+		if ( couleur.equals(this.couleur))
+		{
+			retour = true;
+		}
+		return retour;
+	}
+	
 }

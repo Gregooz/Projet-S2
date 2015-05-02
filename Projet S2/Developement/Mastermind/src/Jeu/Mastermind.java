@@ -111,10 +111,18 @@ public class Mastermind
 		appuyerContinuer();
 		
 		// ---		---		---		---		---		---		---		---		---
-		nettoyerConsole();
+		
+		try{
+		//nettoyerConsole();
+		System.out.println("Ho..;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;.");
+		partie.combiOrdinateur();
+		partie.testEquivalence();
 		partie.affichage();
+		}
+		catch (Exception e)
+		{ System.out.println("Erreur: " +e.getMessage() );
 		
-		
+		}
 		// La partie récupère et conserve les combinaisons proposés par l'ordinateur pour les affichers
 		// La partie va tester si elles sont équivalentes
 		
