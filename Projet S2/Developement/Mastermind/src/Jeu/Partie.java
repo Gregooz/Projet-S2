@@ -47,13 +47,13 @@ public class Partie
 	}
 
 /**
- * Changer la combinaison
+ * Changer la combinaison secrète
  */
 	public void setCombiJoueur()
 	{
 		
 		this.combinaison = this.joueur.getCombi();
-		
+		System.out.println("jjjjjjjj"+this.combinaison);
 	}
 
 	public int getNbPion()
@@ -71,9 +71,12 @@ public class Partie
 		   - renvoi vrai si les meme
 		   - ajoute une combi de pion indice pour lesquels pions sont bien placés
 		  */
-		this.combi_indice[this.numero_tour] = new Combinaison(Couleur.RED,Couleur.RED,Couleur.RED,Couleur.RED);
+		int nb_pion = this.combinaison.getNombrePion();
+		this.combi_indice[this.numero_tour] = new Combinaison();
+		//this.combi_indice[this.numero_tour] = new Combinaison(Couleur.RED,Couleur.RED,Couleur.RED,Couleur.RED);
 		
 		boolean retour = false;
+		
 		if ( this.combi_Enregistrer[this.numero_tour].equals(this.combinaison)){
 			retour = true;
 			this.combi_indice[this.numero_tour] = new Combinaison(Couleur.RED,Couleur.RED,Couleur.RED,Couleur.RED);
@@ -81,16 +84,26 @@ public class Partie
 		else
 		{
 			int nb_bien_placeCouleur = this.combinaison.getNbBienPlaceCouleur(this.combi_Enregistrer[this.numero_tour]);
-			int nb_bonne_couleur = this.combinaison.getNbBonneCouleur(this.combi_Enregistrer[this.numero_tour]);
+			int nb_mauvaise_couleur = this.combinaison.nb_mauvaise_couleur(this.combi_Enregistrer[this.numero_tour]);
 			
-			//for (int i = 0; i < nb)
+			//--> nb_indice_rouge = nb_bien_placeCouleur
+			int nb_indice_blanc = nb_pion -(nb_bien_placeCouleur  + nb_mauvaise_couleur);
+			
+			for (int i = 0; i < nb_indice_blanc;i++) {
+				this.combi_indice[this.numero_tour].setPionCombinaison(i, new PionIndice(Couleur.WHITE));
+			}
+			
+			for (int i= 0; i< nb_bien_placeCouleur;i++){
+				this.combi_indice[this.numero_tour].setPionCombinaison(i+nb_indice_blanc, new PionIndice(Couleur.RED));
+			}
+			
 		}
-		
 		
 		
 		return retour;
 		
 	}
+	
 	
 	/** 
 	*- Recupère la solution de l'ordi et l'ajoute dans les anciennes combi
@@ -104,13 +117,19 @@ public class Partie
 		comb_test.test();
 		
 		this.combi_Enregistrer[ this.numero_tour] = comb_test;
-		this.numero_tour ++;
+
+		
 		 
 	}
 
 public void setNbPion(int nb) {
 	this.joueur.setNbPion(nb);
 	
+}
+
+public Joueur getJoueur()
+{
+	return this.joueur;
 }
 
 
@@ -130,13 +149,13 @@ public void affichage() {
 	 
 	*/ 
 	System.out.println("+ - - - Tour "+ this.numero_tour+ " - - - +\n");
-	System.out.println("                    						Votre Combi: "+ this.combinaison.toString());
-	String chaine = this.numero_tour +" ";
+	System.out.println("- - - -  "+ this.combinaison.toString()+"  - - - - -\n");
+	String chaine ="";
 	
-	for (int i =0; i< this.numero_tour;i++)
-	{	System.out.println(i);
+	for (int i =0; i<= this.numero_tour;i++)
+	{
 
-		chaine = chaine + this.combi_Enregistrer[i] ;//+ "    " + this.combi_indice[i] +"\n";
+		chaine = chaine+ i + " -- " + this.combi_Enregistrer[i] + "    " + this.combi_indice[i] +"\n";
 	}
 	System.out.println(chaine);
 	if (testEquivalence()){
@@ -149,6 +168,9 @@ public void affichage() {
 	
 	}
 
+	public void increTour(){
+		this.numero_tour=numero_tour+1;
+	}
 
 
 }

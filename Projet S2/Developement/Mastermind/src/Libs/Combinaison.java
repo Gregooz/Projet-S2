@@ -11,6 +11,7 @@ package Libs;
 
 public class Combinaison
 {
+	private static Object getPion;
 	private Pion[] pion;
 	private int nombrePion;
 	public static final String BACK_WHITE = "\u001B[47m";
@@ -49,6 +50,12 @@ public class Combinaison
 			this.pion[i] = pions[i];
 		}
 	}
+	
+	public void setPionCombinaison(int i, Pion p)
+	{		
+			this.pion[i] = p;
+
+	}
 
 	public void setNombrePion(int nombrePion)
 	{
@@ -61,9 +68,10 @@ public class Combinaison
 		return this.nombrePion;
 	}
 	
-	public Pion[] getPions()
+	public Pion getPion(int i)
 	{
-		return this.pion;
+		
+		return this.pion[i];
 	}
 
 	public String toString()
@@ -77,16 +85,20 @@ public class Combinaison
 		return chaine;	
 	}
 	
-	public boolean equals(Combinaison c) {
+	public static boolean equals(Combinaison c1, Combinaison c2) {
 		boolean retour = true;
-		Pion[] tab = c.getPions();
-		for (int i =0; i < this.nombrePion; i++)
-		{
-			if ( !this.pion[i].equals(tab[i]) ) {
-				retour = false;
-			}
-		}
 		
+		if (c1.nombrePion == c2.nombrePion) {
+			for( int i=0; i<c1.nombrePion; i++) {
+				if( c1.getPion(i).getCouleur().compareTo( c2.getPion(i).getCouleur() ) != 0){
+					retour = false;
+				}
+			} 
+		}
+		else {
+			retour = false;
+		}
+				
 		return retour;
 	}
 
@@ -109,8 +121,8 @@ public class Combinaison
 		return 0;
 	}
 
-	public int getNbBonneCouleur(Combinaison combinaison) {
-		// TODO calculer le nombre de pions ayant la bonne couleur.
+	public int nb_mauvaise_couleur(Combinaison combinaison) {
+		// TODO calculer le nombre de pions ayant la mauvaise couleur.
 		return 0;
 	}
 

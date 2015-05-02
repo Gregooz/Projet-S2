@@ -97,8 +97,8 @@ public class Mastermind
 		
 		Combinaison comb = new Combinaison(nb_pions);
 		comb.setPionCombinaison(tab_inter);
-		joueur.setCombi(comb);
-		partie.setCombiJoueur();
+		partie.getJoueur().setCombi(comb);
+		partie.setCombiJoueur(); // 
 		
 		// ---		---		---		---		---		---		---		---		---
 		nettoyerConsole();
@@ -111,18 +111,24 @@ public class Mastermind
 		appuyerContinuer();
 		
 		// ---		---		---		---		---		---		---		---		---
-		
-		try{
-		//nettoyerConsole();
-		System.out.println("Ho..;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;.");
+		nettoyerConsole();
+
 		partie.combiOrdinateur();
 		partie.testEquivalence();
 		partie.affichage();
+		partie.increTour();
+		
+		partie.combiOrdinateur();
+		partie.testEquivalence();
+		partie.affichage();
+		partie.increTour();
+		/*try{
+		
 		}
 		catch (Exception e)
 		{ System.out.println("Erreur: " +e.getMessage() );
 		
-		}
+		}*/
 		// La partie récupère et conserve les combinaisons proposés par l'ordinateur pour les affichers
 		// La partie va tester si elles sont équivalentes
 		
