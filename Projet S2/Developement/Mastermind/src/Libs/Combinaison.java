@@ -116,14 +116,34 @@ public class Combinaison
 	}
 
 	public int getNbBienPlaceCouleur(Combinaison combinaison) {
-		// TODO Calculer les pions biens placers avec les bonnes couleurs
+		// Calculer les pions biens placers avec les bonnes couleurs
+		int pion_equi =0;
 		
-		return 0;
+		for (int i = 0; i< this.nombrePion ; i++) {
+			if ( combinaison.getPion(i).equals(this.pion[i]) ) {
+				pion_equi = pion_equi+1;
+			}
+		}
+		return pion_equi;
 	}
 
 	public int nb_mauvaise_couleur(Combinaison combinaison) {
 		// TODO calculer le nombre de pions ayant la mauvaise couleur.
-		return 0;
+		boolean pion_equi = false;
+		int non_pion_equi = 0;
+		for (int i = 0; i< this.nombrePion ; i++) {
+			pion_equi = false;
+			for (int j = 0; j< this.nombrePion ; j++) {
+				if (combinaison.getPion(j).equals(this.pion[i]) ) {
+				pion_equi = true;
+				}
+				
+			}
+			if (!pion_equi) {
+				non_pion_equi = non_pion_equi + 1;
+			}
+		}
+		return non_pion_equi;
 	}
 
 

@@ -86,7 +86,10 @@ public class Partie
 			int nb_bien_placeCouleur = this.combinaison.getNbBienPlaceCouleur(this.combi_Enregistrer[this.numero_tour]);
 			int nb_mauvaise_couleur = this.combinaison.nb_mauvaise_couleur(this.combi_Enregistrer[this.numero_tour]);
 			
+			//System.out.println("Pion bon indice bon couleur: " +nb_bien_placeCouleur );
+			//System.out.println("Pion mauvaise couleur: " +nb_mauvaise_couleur );
 			//--> nb_indice_rouge = nb_bien_placeCouleur
+			
 			int nb_indice_blanc = nb_pion -(nb_bien_placeCouleur  + nb_mauvaise_couleur);
 			
 			for (int i = 0; i < nb_indice_blanc;i++) {
@@ -170,6 +173,10 @@ public void affichage() {
 
 	public void increTour(){
 		this.numero_tour=numero_tour+1;
+	}
+
+	public int getNbTour() {
+		return this.nbToursMax;
 	}
 
 

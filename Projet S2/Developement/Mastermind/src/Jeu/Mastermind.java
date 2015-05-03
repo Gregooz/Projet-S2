@@ -112,16 +112,17 @@ public class Mastermind
 		
 		// ---		---		---		---		---		---		---		---		---
 		nettoyerConsole();
+		int i =0;
+		boolean trouve = false;
+		while ( i < partie.getNbTour()) {
+			System.out.println( i);
 
-		partie.combiOrdinateur();
-		partie.testEquivalence();
-		partie.affichage();
-		partie.increTour();
-		
-		partie.combiOrdinateur();
-		partie.testEquivalence();
-		partie.affichage();
-		partie.increTour();
+			partie.combiOrdinateur();
+			trouve = partie.testEquivalence();
+			partie.affichage();
+			partie.increTour();
+			i = i+1;
+		}
 		/*try{
 		
 		}
