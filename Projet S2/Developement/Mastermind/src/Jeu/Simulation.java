@@ -2,10 +2,7 @@ package Jeu;
 
 import java.util.Random;
 
-import strategy.Answer;
-import strategy.Code;
-import strategy.IMastermindStrategy;
-import strategy.T;
+import CPU.*;
 
 /**
  * A simulation of the specific mastermind alteration in an enclosed area with
@@ -43,12 +40,8 @@ public class Simulation {
 	 * @param strategy
 	 *            Used strategy
 	 */
-	public Simulation(int timeLimit, double CPUSlowness,
-			double robotSpeed, int codeLength, IMastermindStrategy strategy) {
+	public Simulation( int codeLength, IMastermindStrategy strategy) {
 		// Convert from seconds to milliseconds
-		this.timeLimit = timeLimit * 1000;
-		this.CPUSlowness = CPUSlowness;
-		this.robotSpeed = robotSpeed;
 		this.codeLength = codeLength;
 		this.strategy = strategy;
 		this.secretCode = createRandomCode(this.codeLength);

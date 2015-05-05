@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import strategy.IMastermindStrategy;
-import strategy.implementations.*;
+import CPU.IMastermindStrategy;
+import CPU.implementations.*;
 
 /**
  * Alter the constants and run this file to see the results of the simulation. 
@@ -35,8 +35,7 @@ public class Main {
 		List<Statistics> statisticsList = new ArrayList<Statistics>();
 		int progress = 0;
 		for (int i = 0; i < SIMULATIONS; i++) {
-			simulation = new Simulation(TIME_LIMIT, CPU_SLOWNESS, 
-					ROBOT_SPEED, CODE_LENGTH, STRATEGY);
+			simulation = new Simulation(CODE_LENGTH, STRATEGY);
 			statistics = simulation.run();
 			statisticsList.add(statistics);
 			// Print the progress

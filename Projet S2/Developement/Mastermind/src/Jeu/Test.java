@@ -1,15 +1,12 @@
 package Jeu;
 
-import strategy.implementations.*;
+import CPU.implementations.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import strategy.Answer;
-import strategy.Code;
-import strategy.IMastermindStrategy;
-import strategy.T;
+import CPU.*;
 
 
 public class Test {
@@ -43,15 +40,14 @@ public class Test {
 			List<Answer> test2 = new ArrayList<Answer>();
 				test2 = Answer.createAllAnswers(CODE_LENGTH);
 				for(int i=0;i< test2.size();i++){
-					System.out.println("Réponses =" + test2.get(i));
+					System.out.println("Rï¿½ponses =" + test2.get(i));
 			}
 				Code secretCode = createRandomCode(CODE_LENGTH);
 				//System.out.println(secretCode.toString());
 					
 			//	while (i<=11 || !(answer.blacks == CODE_LENGTH)) {
 				
-					Simulation simulation = new Simulation(timeLimit, CPUSlowness, 
-							robotSpeed, CODE_LENGTH, strategy);
+					Simulation simulation = new Simulation(CODE_LENGTH, strategy);
 						Code guess = test.get(1);
 					Answer answer = guess.compare(secretCode);
 					 System.out.println(answer.toString());

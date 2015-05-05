@@ -1,9 +1,7 @@
 package CPU.implementations;
 
-import simulation.Simulation;
-import strategy.Answer;
-import strategy.Code;
-import strategy.IMastermindStrategy;
+import Jeu.Simulation;
+import CPU.*;
 
 /**
  * A strategy that always guesses randomly.

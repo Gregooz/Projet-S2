@@ -3,8 +3,8 @@ package CPU.implementations;
 import java.util.ArrayList;
 import java.util.List;
 
-import strategy.Answer;
-import strategy.Code;
+import CPU.Answer;
+import CPU.Code;
 
 /**
  * Strategy that uses the worst case algorithm also known as the "Knuth
@@ -20,8 +20,7 @@ public class Knuth extends BasicStrategy {
 
 	@Override
 	public Code guess(Answer answer) {
-		this.removeInconsistentCodes(this.consistentCodes, this.lastGuess,
-				answer);
+		this.removeInconsistentCodes(this.consistentCodes, this.lastGuess,answer);
 		List<Code> bestGuesses = new ArrayList<Code>();
 		bestGuesses.add(this.consistentCodes.get(0));
 		int maxMinimum = 0;
@@ -47,8 +46,7 @@ public class Knuth extends BasicStrategy {
 		if(!consistentBestGuesses.isEmpty()) {
 			bestGuesses = consistentBestGuesses;
 		}
-		// Use a code with the shortest travel distance
-		this.lastGuess = this.getShortestCode(bestGuesses);
+		this.lastGuess = this.allCodes.get(0);
 		this.lastButton = this.lastGuess.get(this.CODE_LENGTH - 1);
 		return this.lastGuess;
 	}

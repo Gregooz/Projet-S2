@@ -15,12 +15,14 @@ public class Partie
 {
 	private Joueur joueur;
 	private Combinaison combinaison;
-	//private BasicStrategy ordinateur;
+	private BasicStrategy ordinateur;
 	private int nbToursMax;
 	private Combinaison[] combi_Enregistrer;
 	private Combinaison[] combi_indice;
 	private int numero_tour;
-/** 
+	
+	
+	/** 
 *Constructeur de la classe Partie
 *@param pseudo Pseudo du joueur
 *@param nbToursMax nombres d'essais possibles pour le joueur.
@@ -47,13 +49,13 @@ public class Partie
 	}
 
 /**
- * Changer la combinaison secrète
+ * Changer la combinaison secrï¿½te
  */
 	public void setCombiJoueur()
 	{
 		
 		this.combinaison = this.joueur.getCombi();
-		System.out.println("jjjjjjjj"+this.combinaison);
+		System.out.println(this.combinaison);
 	}
 
 	public int getNbPion()
@@ -61,15 +63,15 @@ public class Partie
 		return this.joueur.getCombi().getNombrePion();
 	}
 /** 
-*- Test l'equivalence de la dernière combi récup
+*- Test l'equivalence de la derniï¿½re combi rï¿½cup
  - renvoi vrai si les meme
- - ajoute une combi de pion indice pour lesquels pions sont bien placés
+ - ajoute une combi de pion indice pour lesquels pions sont bien placï¿½s
 *@return Retourne Vrai si la combinaison Ã  Ã©tÃ© trouvÃ© Faux si non.
 */
 	public boolean testEquivalence() {
-		/* - Test l'equivalence de la dernière combi récup
+		/* - Test l'equivalence de la derniï¿½re combi rï¿½cup
 		   - renvoi vrai si les meme
-		   - ajoute une combi de pion indice pour lesquels pions sont bien placés
+		   - ajoute une combi de pion indice pour lesquels pions sont bien placï¿½s
 		  */
 		int nb_pion = this.combinaison.getNombrePion();
 		this.combi_indice[this.numero_tour] = new Combinaison();
@@ -109,11 +111,11 @@ public class Partie
 	
 	
 	/** 
-	*- Recupère la solution de l'ordi et l'ajoute dans les anciennes combi
+	*- Recupï¿½re la solution de l'ordi et l'ajoute dans les anciennes combi
 	*
 	*/
 	public void combiOrdinateur() {
-		/* Recupère la solution de l'ordi et l'ajoute dans les anciennes combi
+		/* Recupï¿½re la solution de l'ordi et l'ajoute dans les anciennes combi
 		 */
 		//this.combi_test[ this.combi_test.lenght() ] = this.ordinateur.getCombiCreer(); ?
 		Combinaison comb_test = new Combinaison( this.joueur.getCombi().getNombrePion());
@@ -124,6 +126,11 @@ public class Partie
 		
 		 
 	}
+	
+	/** 
+	 * 
+	 * @param nb nombre de pion dans la combinaison secrete
+	 */
 
 public void setNbPion(int nb) {
 	this.joueur.setNbPion(nb);
@@ -162,7 +169,7 @@ public void affichage() {
 	}
 	System.out.println(chaine);
 	if (testEquivalence()){
-		System.out.println("Perdu : L'ordinateur à trouver votre code !");
+		System.out.println("Perdu : L'ordinateur ï¿½ trouver votre code !");
 	}
 	else {
 		System.out.println("Appuyez sur une touche pour continuer...");

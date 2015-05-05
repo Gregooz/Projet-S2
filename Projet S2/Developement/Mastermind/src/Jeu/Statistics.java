@@ -1,4 +1,4 @@
-package simulation;
+package Jeu;
 
 import java.util.HashMap;
 import java.util.Map;

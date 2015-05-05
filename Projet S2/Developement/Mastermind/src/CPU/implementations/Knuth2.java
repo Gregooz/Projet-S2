@@ -1,7 +1,7 @@
 package CPU.implementations;
 
-import strategy.Answer;
-import strategy.Code;
+import CPU.Answer;
+import CPU.Code;
 
 /**
  * In contrast to Knuth this strategy does *not* try to minimize the travel

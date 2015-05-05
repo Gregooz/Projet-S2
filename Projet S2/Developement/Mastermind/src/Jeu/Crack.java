@@ -1,7 +1,6 @@
 package Jeu;
 
 import CPU.implementations.*;
-import Main.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -34,11 +33,14 @@ public class Crack {
 		return new Code(ts);
 	}
 
-	public void run( BasicStrategy strat){
-		Code guess = allCodes.get(1);
-		Answer answer = partie.compare(guess);
-				strat.removeInconsistentCodes(allCodes,guess,answer);
+	public Code run( BasicStrategy strat){
+		return (allCodes.get(0));
+		
 	}
-
+	public Code run(BasicStrategy strat, Answer indice){
+		this.strat.removeInconsistentCodes(allCodes, allCodes.get(0), indice);
+		return(allCodes.get(0));
+		
+	}
 
 }
