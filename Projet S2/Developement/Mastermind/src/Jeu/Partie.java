@@ -85,15 +85,16 @@ public class Partie
 		}
 		else
 		{
+				// On recherche les indices rouge et blanc
 			int nb_bien_placeCouleur = this.combinaison.getNbBienPlaceCouleur(this.combi_Enregistrer[this.numero_tour]);
 			int nb_mauvaise_couleur = this.combinaison.nb_mauvaise_couleur(this.combi_Enregistrer[this.numero_tour]);
 			
-			//System.out.println("Pion bon indice bon couleur: " +nb_bien_placeCouleur );
-			//System.out.println("Pion mauvaise couleur: " +nb_mauvaise_couleur );
-			//--> nb_indice_rouge = nb_bien_placeCouleur
+			//--> indice rouge = nb_bien_placeCouleur
+			//--> indice blanc = nombre de pion - (nb_bien_placeCouleur +  nb_mauvaise_couleur )
 			
 			int nb_indice_blanc = nb_pion -(nb_bien_placeCouleur  + nb_mauvaise_couleur);
 			
+			// On ajoute les bon pions
 			for (int i = 0; i < nb_indice_blanc;i++) {
 				this.combi_indice[this.numero_tour].setPionCombinaison(i, new PionIndice(Couleur.WHITE));
 			}
@@ -117,11 +118,14 @@ public class Partie
 	public void combiOrdinateur() {
 		/* Recup�re la solution de l'ordi et l'ajoute dans les anciennes combi
 		 */
-		//this.combi_test[ this.combi_test.lenght() ] = this.ordinateur.getCombiCreer(); ?
+//		this.combi_test[ this.combi_test.lenght() ] = this.ordinateur.getCombiCreer(); ?
 		Combinaison comb_test = new Combinaison( this.joueur.getCombi().getNombrePion());
 		comb_test.test();
-		
 		this.combi_Enregistrer[ this.numero_tour] = comb_test;
+		
+		
+//		Combinaison combinaison = this.crack.run(this.ordinateur);
+//  	this.combi_Enregistrer[ this.numero_tour] = combinaison;
 
 		
 		 

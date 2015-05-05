@@ -196,7 +196,8 @@ public class Mastermind
 	
 	public final static void nettoyerConsole()
 	{
-		System.out.print ("\n\n\n\n\n\n");
+//		System.out.print ("\n\n\n\n\n\n");
+		System.out.print("\033[H\033[2J");
 
 	}
 	
