@@ -24,13 +24,14 @@ public  class Pion
 	}
 
 	public void setPion(Couleur couleur)
+	
 	{
 		this.couleur = couleur;
 	}
 
 	public String toString()
 	{
-		return(this.couleur + "O ");
+		return(this.couleur + "O");
 	}
 	
 	public Couleur getCouleur() {

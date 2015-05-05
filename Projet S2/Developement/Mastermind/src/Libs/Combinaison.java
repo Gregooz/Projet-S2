@@ -76,10 +76,10 @@ public class Combinaison
 
 	public String toString()
 	{
-		String chaine = "";
+		String chaine = "" + BRIGHT;
 		for (int i=0;i < this.nombrePion; i++) 
 		{
-			chaine = BRIGHT + chaine + BACK_WHITE +" "+ pion[i];
+			chaine =  chaine + BACK_WHITE +" "+ pion[i];
 		}
 		chaine = chaine + RESET;
 		return chaine;	
