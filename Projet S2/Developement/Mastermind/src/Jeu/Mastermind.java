@@ -107,7 +107,7 @@ public class Mastermind
 		
 		System.out.println(comb.toString() + "\n\n");
 		System.out.println("L'ordinateur va maintenant essayer de retrouver votre combinaison.\n");
-		System.out.println("Appuyez sur une touche pour démarer la partie ...");
+		System.out.println("Appuyez sur une touche pour démarer la partie ...A");
 		appuyerContinuer();
 		
 		// ---		---		---		---		---		---		---		---		---
@@ -197,7 +197,7 @@ public class Mastermind
 	public final static void nettoyerConsole()
 	{
 //		System.out.print ("\n\n\n\n\n\n");
-		System.out.print("\033[H\033[2J");
+		System.out.print("\033[H\033[2J"+Couleur.RESET);
 
 	}
 	

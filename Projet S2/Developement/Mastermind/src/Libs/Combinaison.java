@@ -79,7 +79,12 @@ public class Combinaison
 		String chaine = "" + BRIGHT;
 		for (int i=0;i < this.nombrePion; i++) 
 		{
-			chaine =  chaine + BACK_WHITE +" "+ pion[i] + RESET;
+			if (pion[i] == null) {
+				chaine =  chaine +"  " + RESET;
+			}
+			else {
+			chaine =  chaine +" "+ pion[i] + RESET;
+			}
 		}
 		chaine = chaine + RESET;
 		return chaine;	
