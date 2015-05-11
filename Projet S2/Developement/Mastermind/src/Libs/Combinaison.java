@@ -83,7 +83,7 @@ public class Combinaison
 				chaine =  chaine +"  " + RESET;
 			}
 			else {
-			chaine =  chaine +" "+ pion[i] + RESET;
+			chaine =  chaine +" "+ pion[i];// + RESET;
 			}
 		}
 		chaine = chaine + RESET;

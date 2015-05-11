@@ -25,7 +25,7 @@ public class Mastermind
 		System.out.println("+ - - - Mastermind - - - +");
 		System.out.println("Nouvelle partie.");
 		
-		System.out.println("Le joueur créer sa combinaison pour que l'ordinateur la trouve.");
+		System.out.println("Le joueur crÃ©er sa combinaison pour que l'ordinateur la trouve.");
 		System.out.println("\n\n");
 		
 		Joueur joueur = new Joueur("Jacquie");
@@ -33,9 +33,9 @@ public class Mastermind
 		
 		// ---		---		---		---		---		---		---		---		---
 		nettoyerConsole();
-		System.out.println("+ - - - Choix des paramètres - - - +");
+		System.out.println("+ - - - Choix des paramÃ¨tres - - - +");
 			// Le joueur choisit sa combinaison
-			// On lui présente les couleurs, il appuis sur une touche  pour choisir
+			// On lui prï¿½sente les couleurs, il appuis sur une touche  pour choisir
 		System.out.println("Combien d'essais :\n");
 		boolean bon = false;
 		int nb_tours = 0;
@@ -54,7 +54,7 @@ public class Mastermind
 		
 		// ---		---		---		---		---		---		---		---		---
 		nettoyerConsole();
-		System.out.println("+ - - - Choix des paramètres - - - +");
+		System.out.println("+ - - - Choix des paramÃ¨tres - - - +");
 		System.out.println("Combien de pion dans la combinaison ( min 4 - 6 max):\n");
 		int nb_pions = 0;
 		bon = false;
@@ -70,7 +70,7 @@ public class Mastermind
 		}
 		// ---		---		---		---		---		---		---		---		---
 		nettoyerConsole();
-		System.out.println("+ - - - Création Combinaison - - - +");
+		System.out.println("+ - - - CrÃ©ation Combinaison - - - +");
 		
 		partie.setNbPion(nb_pions);
 		PionCombinaison[] tab_inter = new PionCombinaison[nb_pions];
@@ -83,15 +83,15 @@ public class Mastermind
 				chaine = chaine + " " +tab_inter[i-1].toString();
 			}
 						
-			System.out.println(chaine + "\n\n");
+			System.out.println(chaine + Couleur.RESET +"\n\n");
 			
 			
-			System.out.println("Appuyez sur le numéro de la couleur que vous voulez choisir pour votre "+(i+1) + " pion ?");
+			System.out.println("Appuyez sur le numÃ©ro de la couleur que vous voulez choisir pour votre "+(i+1) + " pion ?");
 			afficherCouleur();
 			num_couleur = entrerClavier();
 			tab_inter[i] = new PionCombinaison(equiNumCouleur(num_couleur));
 			nettoyerConsole();
-			System.out.println("+ - - - Création Combinaison - - - +");
+			System.out.println("+ - - - CrÃ©ation Combinaison - - - +");
 			
 		}
 		
@@ -107,7 +107,7 @@ public class Mastermind
 		
 		System.out.println(comb.toString() + "\n\n");
 		System.out.println("L'ordinateur va maintenant essayer de retrouver votre combinaison.\n");
-		System.out.println("Appuyez sur une touche pour démarer la partie ...A");
+		System.out.println("Appuyez sur une touche pour dÃ©marer la partie ...A");
 		appuyerContinuer();
 		
 		// ---		---		---		---		---		---		---		---		---
@@ -122,6 +122,7 @@ public class Mastermind
 			partie.affichage();
 			partie.increTour();
 			i = i+1;
+			appuyerContinuer();
 		}
 		/*try{
 		
@@ -130,8 +131,8 @@ public class Mastermind
 		{ System.out.println("Erreur: " +e.getMessage() );
 		
 		}*/
-		// La partie récupère et conserve les combinaisons proposés par l'ordinateur pour les affichers
-		// La partie va tester si elles sont équivalentes
+		// La partie rï¿½cupï¿½re et conserve les combinaisons proposï¿½s par l'ordinateur pour les affichers
+		// La partie va tester si elles sont ï¿½quivalentes
 		
 
 
@@ -185,7 +186,7 @@ public class Mastermind
 		{
 			chaine = chaine + tab_pion[i] + " ";
 		}
-		chaine = chaine + "\n";
+		chaine = chaine + "\n" + Couleur.RESET;
 		for(int i = 0; i< 8; i++)
 		{
 			chaine = chaine + (i+1) + " ";
