@@ -63,9 +63,9 @@ public class Partie
 		return this.joueur.getCombi().getNombrePion();
 	}
 /** 
-*- Test l'equivalence de la derni�re combi r�cup
- - renvoi vrai si les meme
- - ajoute une combi de pion indice pour lesquels pions sont bien plac�s
+*Test l'equivalence de la dernière combinaison récupéré
+ . Renvoi vrai si les meme
+ . Ajoute une combi de pion indice pour lesquels pions sont bien placés.
 *@return Retourne Vrai si la combinaison à été trouvé Faux si non.
 */
 	public boolean testEquivalence() {
@@ -112,7 +112,7 @@ public class Partie
 	
 	
 	/** 
-	*- Recup�re la solution de l'ordi et l'ajoute dans les anciennes combi
+	*Méthode qui récupere la solution de l'ordinateur et l'ajoute dans les anciennes combinaison.
 	*
 	*/
 	public void combiOrdinateur() {
@@ -132,7 +132,7 @@ public class Partie
 	}
 	
 	/** 
-	 * 
+	 * Modifi le nombre de pion dans la combinaison secrète
 	 * @param nb nombre de pion dans la combinaison secrete
 	 */
 
@@ -140,7 +140,10 @@ public void setNbPion(int nb) {
 	this.joueur.setNbPion(nb);
 	
 }
-
+/** 
+*Méthode qui renvoi le joueur qui joue à la partie.
+*@return le joueur de la partie
+*/
 public Joueur getJoueur()
 {
 	return this.joueur;
@@ -150,8 +153,7 @@ public Joueur getJoueur()
 /** 
 *    - afficher la combi du joueur
 *    - afficher toutes les combi de l'ordi
-*	 -afficher nb d'essais
-*	 -( afficher score)
+*	 - afficher nb d'essais
 *	 - affiche les indices
 */
 public void affichage() {
@@ -182,10 +184,17 @@ public void affichage() {
 	
 	}
 
+/** 
+* Méthode qui incrémente le tour d'une partie.
+*/
 	public void increTour(){
 		this.numero_tour=numero_tour+1;
 	}
 
+/** 
+*Méthode qui renvoi le nombre de tour effectué.
+*@return le numéro du tour.
+*/
 	public int getNbTour() {
 		return this.nbToursMax;
 	}
