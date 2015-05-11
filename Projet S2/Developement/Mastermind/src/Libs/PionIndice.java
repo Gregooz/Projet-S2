@@ -14,7 +14,7 @@ public class PionIndice extends Pion
 
 /** 
 * Constructeur de la classe PionIndice
-*@param 
+*@param couleur La couleur du pion Indice
 */
 
 	public PionIndice(Couleur couleur)

@@ -14,7 +14,7 @@ public class PionCombinaison extends Pion
 	
 /** 
 * Constructeur de la classe PionCombinaison
-*@param 
+*@param couleur La couleur du pion Combinaison
 */
 
 	public PionCombinaison(Couleur couleur)

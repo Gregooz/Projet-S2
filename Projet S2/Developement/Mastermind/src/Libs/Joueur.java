@@ -16,18 +16,22 @@ public class Joueur
 	private String pseudo;
 	private Combinaison combinaison;
 	private Partie partie;
+
 /** 
 * Constructeur de la classe Joueur
 *@param Pseudo Pseudo du joueur
 *
 */
-
 	public Joueur(String pseudo)
 	{
 		this.pseudo = pseudo;
 		this.combinaison = new Combinaison();
 	}
 
+	/**
+	 * Connaître le pseudo du joueur
+	 * @return Retourne le pseudo du joueur
+	 */
 	public String getPseudo()
 	{
 		return this.pseudo;
