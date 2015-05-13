@@ -172,9 +172,9 @@ public class Combinaison
 	}
 
 	/**
-	 * Retourne le nombre de couleur 
-	 * @param combinaison
-	 * @return
+	 * Calcul les pions ayant le bon indice avec la bonne couleur.
+	 * @param combinaison Une combinaisons de pion
+	 * @return Retourne le nombre de pion ayant la meme couleur et meme indice dans les combinaisons
 	 */
 	public int getNbBienPlaceCouleur(Combinaison combinaison) {
 		// Calculer les pions biens placers avec les bonnes couleurs
@@ -187,7 +187,11 @@ public class Combinaison
 		}
 		return pion_equi;
 	}
-
+/**
+ * Calcul les pions n'ayant pas la  bonne couleur.
+ * @param combinaison Une combinaisons de pion
+ * @return Retourne le nombre de pion n'ayant pas la bonne couleur.
+ */
 	public int nb_mauvaise_couleur(Combinaison combinaison) {
 		// TODO calculer le nombre de pions ayant la mauvaise couleur.
 		boolean pion_equi = false;
