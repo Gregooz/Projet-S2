@@ -127,8 +127,7 @@ public class Partie {
 		 */
 		// this.combi_test[ this.combi_test.lenght() ] =
 		// this.ordinateur.getCombiCreer(); ?
-		Combinaison comb_test = new Combinaison(this.joueur.getCombi()
-				.getNombrePion());
+		Combinaison comb_test = new Combinaison(this.joueur.getCombi().getNombrePion());
 		comb_test.test();
 		this.combi_Enregistrer[this.numero_tour] = comb_test;
 

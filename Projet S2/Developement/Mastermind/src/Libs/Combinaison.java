@@ -7,7 +7,14 @@
 */
 
 package Libs;
-
+/* 1 : noir
+ * 2 : rouge
+ * 3 : jaune
+ * 4 : vert
+ * 5 : bleu
+ * 6 : purple
+ * 7 : white
+ */
 
 public class Combinaison
 {
@@ -20,7 +27,7 @@ public class Combinaison
 
 /** 
 * Constructeur de la classe Combinaison
-*@param 
+*@param nombreDePion Le nombre de pion
 */
 	
 	public Combinaison(int nombrePion)
@@ -29,6 +36,13 @@ public class Combinaison
 			this.pion = new Pion[nombrePion];
 		}
 
+	/**
+	 *  Constructeur de la classe Combinaison 
+	 * @param c1 Couleur du premier pion
+	 * @param c2 Couleur du second pion
+	 * @param c3 Couleur du troisième pion
+	 * @param c4 couleur du quatrième pion
+	 */
 	public Combinaison(Couleur c1, Couleur c2, Couleur c3, Couleur c4)
 	{
 		this(4);
@@ -37,11 +51,19 @@ public class Combinaison
 		this.pion[2] = new PionCombinaison(c3);
 		this.pion[3] = new PionCombinaison(c4);
 	}
+	
+	/**
+	 * Constructeur de la classe pion. Par défault la combinaison est de taille 4.
+	 */
 	public Combinaison()
 	{
 		this(4);
 	}
 
+	/**
+	 * Modifie les pions de la combinaison
+	 * @param pions Tableau de pion 
+	 */
 	public void setPionCombinaison(Pion[] pions)
 	{		
 
@@ -51,29 +73,52 @@ public class Combinaison
 		}
 	}
 	
+	/**
+	 * Modifie les pions de la combinaison
+	 * @param i L'indice du pion
+	 * @param p Le nouveau pion a insérer
+	 */
+	
 	public void setPionCombinaison(int i, Pion p)
 	{		
 			this.pion[i] = p;
 
 	}
 
+	/**
+	 * Modifie le nomber de pion total dans la combinaison
+	 * @param nombrePion
+	 */
 	public void setNombrePion(int nombrePion)
 	{
 		this.nombrePion =nombrePion;
 		this.pion = new PionCombinaison[ this.nombrePion ];
 	}
 
+	/**
+	 * Récupère le nombre total de pion dans la combinaison
+	 * @return
+	 */
 	public int getNombrePion()
 	{
 		return this.nombrePion;
 	}
 	
+	/**
+	 * Récupère le pion à un indice donnée.
+	 * @param i L'indice du pion dans la combinaison.
+	 * @return Le pion à l'indice i.
+	 */
 	public Pion getPion(int i)
 	{
 		
 		return this.pion[i];
 	}
 
+	/**
+	 * Retourne une chaine de caractère de la combinaison
+	 *@return Une chaine de caractère représentant la combinaison
+	 */
 	public String toString()
 	{
 		String chaine = "" + BRIGHT;
@@ -90,6 +135,12 @@ public class Combinaison
 		return chaine;	
 	}
 	
+	/**
+	 * Vérifie si deux combinaisons sont équivalentes
+	 * @param c1 une combinaison à tester
+	 * @param c2 une combinaison à tester
+	 * @return Vrai si les combinaisons sont équivalentes.
+	 */
 	public static boolean equals(Combinaison c1, Combinaison c2) {
 		boolean retour = true;
 		
@@ -120,6 +171,11 @@ public class Combinaison
 		}
 	}
 
+	/**
+	 * Retourne le nombre de couleur 
+	 * @param combinaison
+	 * @return
+	 */
 	public int getNbBienPlaceCouleur(Combinaison combinaison) {
 		// Calculer les pions biens placers avec les bonnes couleurs
 		int pion_equi =0;

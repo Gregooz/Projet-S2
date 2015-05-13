@@ -83,7 +83,10 @@ public class Joueur
 	{
 		this.combinaison = c;
 	}
-
+/**
+ * Modifie le nombre de pion dans la combinaison du Joueur
+ * @param nb Le nouveau nombre de pion
+ */
 	public void setNbPion(int nb) {
 		
 		this.combinaison.setNombrePion(nb);

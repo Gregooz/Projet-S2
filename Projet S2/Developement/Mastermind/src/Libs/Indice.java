@@ -14,7 +14,7 @@ public class Indice extends Pion
 	private Couleur couleur;
 /** 
 * Constructeur de la classe Indice
-*@param 
+*
 */
 
 	public Indice()
