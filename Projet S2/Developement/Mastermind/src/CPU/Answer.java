@@ -29,6 +29,9 @@ public class Answer {
 		}
 		return result;
 	}
+	public int getBlacks(){
+		return(this.blacks);
+	}
 
 	@Override
 	public String toString() {
