@@ -37,16 +37,33 @@ public class Joueur
 		return this.pseudo;
 	}
 
+	/** 
+	* modifieur du pseudo du joueur
+	*@param Pseudo Pseudo du joueur
+	*
+	*/
 	public void setPseudo(String pseudo)
 	{
 		this.pseudo = pseudo;
 	}
 
+	/** 
+	* Récupéreur de la combinaison
+	*@return Pseudo retourne la combinaison construite par le joueur
+	*
+	*/
 	public Combinaison getCombi()
 	{
 		return this.combinaison;
 	}
 
+	/** 
+	* Modifie les couleurs des pions de la combinaison
+	*@param  p1 PionCombinaison  
+	*@param  p2 PionCombinaison
+	*@param  p3 PionCombinaison
+	*@param  p4 PionCombinaison
+	*/		
 	public void choisitCouleurPion(PionCombinaison p1, PionCombinaison p2, PionCombinaison p3, PionCombinaison p4)
 	{
 		PionCombinaison[] tableau = new PionCombinaison[4];
@@ -58,7 +75,10 @@ public class Joueur
 		this.combinaison.setPionCombinaison(tableau);
 
 	}
-
+/**
+ * Modifie la combinaison du joueur
+ * @param c La nouvelle combinaison 
+ */
 	public void setCombi(Combinaison c)
 	{
 		this.combinaison = c;
