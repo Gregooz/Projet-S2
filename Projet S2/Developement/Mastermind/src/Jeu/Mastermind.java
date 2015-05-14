@@ -74,12 +74,12 @@ public class Mastermind
 		
 		partie.setNbPion(nb_pions);
 		PionCombinaison[] tab_inter = new PionCombinaison[nb_pions];
-		int num_couleur;
+		int num_couleur = 0;
 		String chaine = "";
 		for (int i = 0; i < partie.getNbPion(); i++)
 		{
 			System.out.println("Votre combinaison:\n");
-			if ( i>0) {			
+			if ( i>0) {
 				chaine = chaine + " " +tab_inter[i-1].toString();
 			}
 						
@@ -88,8 +88,10 @@ public class Mastermind
 			
 			System.out.println("Appuyez sur le numéro de la couleur que vous voulez choisir pour votre "+(i+1) + " pion ?");
 			afficherCouleur();
-			num_couleur = entrerClavier();
-			tab_inter[i] = new PionCombinaison(equiNumCouleur(num_couleur));
+			
+				num_couleur = entrerClavier();
+				tab_inter[i] = new PionCombinaison(new Couleur(num_couleur));
+			
 			nettoyerConsole();
 			System.out.println("+ - - - Création Combinaison - - - +");
 			
@@ -139,7 +141,7 @@ public class Mastermind
 		
 
 	}
-	
+	/*
 	private static Couleur equiNumCouleur(int num_couleur) {
 		Couleur retour = null;
 		if ( num_couleur == 1) {
@@ -168,18 +170,19 @@ public class Mastermind
 		}
 		return retour;
 	}
+	*/
 
 	public final static void afficherCouleur()
 	{
 		PionCombinaison[] tab_pion = new PionCombinaison[8];
-		tab_pion[0] = new PionCombinaison(Couleur.BLACK);
-		tab_pion[1] = new PionCombinaison(Couleur.BLUE);
-		tab_pion[2] = new PionCombinaison(Couleur.CYAN);
-		tab_pion[3] = new PionCombinaison(Couleur.GREEN);
-		tab_pion[4] = new PionCombinaison(Couleur.PURPLE);
-		tab_pion[5] = new PionCombinaison(Couleur.RED);
-		tab_pion[6] = new PionCombinaison(Couleur.WHITE);
-		tab_pion[7] = new PionCombinaison(Couleur.YELLOW);
+		tab_pion[0] = new PionCombinaison(new Couleur(1));
+		tab_pion[1] = new PionCombinaison(new Couleur(2));
+		tab_pion[2] = new PionCombinaison(new Couleur(3));
+		tab_pion[3] = new PionCombinaison(new Couleur(4));
+		tab_pion[4] = new PionCombinaison(new Couleur(5));
+		tab_pion[5] = new PionCombinaison(new Couleur(6));
+		tab_pion[6] = new PionCombinaison(new Couleur(7));
+		tab_pion[7] = new PionCombinaison(new Couleur(8));
 		
 		String chaine = "";
 		for(int i = 0; i< 8; i++)

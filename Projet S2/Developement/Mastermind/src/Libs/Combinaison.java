@@ -7,14 +7,7 @@
 */
 
 package Libs;
-/* 1 : noir
- * 2 : rouge
- * 3 : jaune
- * 4 : vert
- * 5 : bleu
- * 6 : purple
- * 7 : white
- */
+
 
 public class Combinaison
 {
@@ -146,7 +139,7 @@ public class Combinaison
 		
 		if (c1.nombrePion == c2.nombrePion) {
 			for( int i=0; i<c1.nombrePion; i++) {
-				if( c1.getPion(i).getCouleur().compareTo( c2.getPion(i).getCouleur() ) != 0){
+				if( !c1.getPion(i).getCouleur().equals( c2.getPion(i).getCouleur() )){
 					retour = false;
 				}
 			} 
@@ -160,14 +153,14 @@ public class Combinaison
 
 	public void test() {
 		
-		this.pion[0] = new PionCombinaison(Couleur.BLUE);
-		this.pion[1] = new PionCombinaison(Couleur.WHITE);
-		this.pion[2] = new PionCombinaison(Couleur.WHITE);
-		this.pion[3] = new PionCombinaison(Couleur.RED);
+		this.pion[0] = new PionCombinaison(new Couleur(1));
+		this.pion[1] = new PionCombinaison(new Couleur(3));
+		this.pion[2] = new PionCombinaison(new Couleur(1));
+		this.pion[3] = new PionCombinaison(new Couleur(4));
 
 		for (int i = 3 ;i < this.nombrePion ; i++)
 		{
-			this.pion[i] = new PionCombinaison(Couleur.PURPLE);
+			this.pion[i] = new PionCombinaison(new Couleur(7));
 		}
 	}
 

@@ -27,7 +27,7 @@ public  class Pion
 	 */
 	public Pion()
 	{
-		this.couleur = Couleur.BLUE;
+		this.couleur = new Couleur(2);
 	}
 
 	/**
@@ -64,8 +64,8 @@ public  class Pion
 	public boolean equals(Pion p) {
 		
 		boolean retour = false;
-		Couleur couleur = p.getCouleur();
-		if ( couleur.equals(this.couleur))
+		Couleur p_couleur = p.getCouleur();
+		if ( this.couleur.equals(p_couleur))
 		{
 			retour = true;
 		}
