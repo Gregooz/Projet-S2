@@ -170,7 +170,6 @@ public class Combinaison
 	 * @return Retourne le nombre de pion ayant la meme couleur et meme indice dans les combinaisons
 	 */
 	public int getNbBienPlaceCouleur(Combinaison combinaison) {
-		// Calculer les pions biens placers avec les bonnes couleurs
 		int pion_equi =0;
 		
 		for (int i = 0; i< this.nombrePion ; i++) {
@@ -186,7 +185,7 @@ public class Combinaison
  * @return Retourne le nombre de pion n'ayant pas la bonne couleur.
  */
 	public int nb_mauvaise_couleur(Combinaison combinaison) {
-		// TODO calculer le nombre de pions ayant la mauvaise couleur.
+		
 		boolean pion_equi = false;
 		int non_pion_equi = 0;
 		for (int i = 0; i< this.nombrePion ; i++) {
@@ -194,8 +193,7 @@ public class Combinaison
 			for (int j = 0; j< this.nombrePion ; j++) {
 				if (combinaison.getPion(j).equals(this.pion[i]) ) {
 				pion_equi = true;
-				}
-				
+				}				
 			}
 			if (!pion_equi) {
 				non_pion_equi = non_pion_equi + 1;
@@ -203,6 +201,38 @@ public class Combinaison
 		}
 		return non_pion_equi;
 	}
-
+	/**
+	 * Calcul les pions n'ayant pas la  bonne couleur.
+	 * @param combinaison Une combinaisons de pion
+	 * @return Retourne le nombre de pion n'ayant pas la bonne couleur.
+	 */
+		public Combinaison combiIndice(Combinaison combinaison) {
+			int pion_equi =0;
+			Combinaison copie = this;
+			int pion_blanc = 0;
+			
+			for (int i = 0; i< this.nombrePion ; i++) {
+				if ( combinaison.getPion(i).equals(copie.pion[i]) ) {
+					pion_equi = pion_equi+1;
+					copie.setPionCombinaison(i, null);
+				}
+			}
+			
+			for (int i =0; i <this.nombrePion; i++){
+				for (int j = 0; j<combinaison.nombrePion; j++){
+					if (combinaison.getPion(j).equals(this.pion[i]) ) {
+						pion_blanc = pion_blanc +1;
+						}		
+				}
+			}
+			Combinaison combiIndice = new Combinaison();
+			for (int i = 0; i< pion_equi ; i++) {
+				combiIndice.setPionCombinaison(i, new Pion(new Couleur(2)));
+			}
+			for (int i = 0; i< pion_blanc ; i++) {
+				combiIndice.setPionCombinaison(i+pion_equi, new Pion(new Couleur(7)));
+			}
+			return combiIndice;
+		}
 
 }

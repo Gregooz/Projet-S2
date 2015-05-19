@@ -21,7 +21,7 @@ public class Couleur {
 
 	/**
 	 * Constructeur de la classe Couleur.
-	 * </br> 1 : noir 
+	 * </br>1 : noir 
 	 * </br>2 : rouge 
 	 * </br>3 : jaune 
 	 * </br>4 : vert 
@@ -30,56 +30,64 @@ public class Couleur {
 	 * </br>7 : white
 	 * </br>8 : cyan
 	 * 
-	 * @param num Le numéro de la couleur
+	 * @param num Le numï¿½ro de la couleur
 	 */
 	public Couleur(int num) {
 		this.numero = num;
-//		switch (this.numero) {
-//			case 1:
-//				this.code = BLACK;
-//			case 2:
-//				this.code = RED;
-//			case 3:
-//				this.code = YELLOW;
-//			case 4:
-//				this.code = GREEN;
-//			case 5:
-//				this.code = BLUE;
-//			case 6:
-//				this.code = PURPLE;
-//			case 7:
-//				this.code = WHITE;
-//			case 8:
-//				this.code = CYAN;
-//		}
-//	}
 		switch (this.numero) {
-		case 1:
-			this.code = "1";
-			break;
-		case 2:
-			this.code = "2";
-			break;			
-		case 3:
-			this.code = "3";
-			break;
-		case 4:
-			this.code = "4";
-			break;
-		case 5:
-			this.code = "5";
-			break;
-		case 6:
-			this.code = "6";
-			break;
-		case 7:
-			this.code = "7";
-			break;
-		case 8:
-			this.code = "8";
-			break;
+			case 1:
+				this.code = BLACK;
+				break;
+			case 2:
+				this.code = RED;
+				break;				
+			case 3:
+				this.code = YELLOW;
+				break;
+			case 4:
+				this.code = GREEN;
+				break;
+			case 5:
+				this.code = BLUE;
+				break;
+			case 6:
+				this.code = PURPLE;
+				break;
+			case 7:
+				this.code = WHITE;
+				break;
+			case 8:
+				this.code = CYAN;
+				break;
 		}
-}
+	}
+//		switch (this.numero) {
+//		case 1:
+//			this.code = "1";
+//			break;
+//		case 2:
+//			this.code = "2";
+//			break;			
+//		case 3:
+//			this.code = "3";
+//			break;
+//		case 4:
+//			this.code = "4";
+//			break;
+//		case 5:
+//			this.code = "5";
+//			break;
+//		case 6:
+//			this.code = "6";
+//			break;
+//		case 7:
+//			this.code = "7";
+//			break;
+//		case 8:
+//			this.code = "8";
+//			break;
+//		}
+//}
 
 	@Override
 	public String toString() {

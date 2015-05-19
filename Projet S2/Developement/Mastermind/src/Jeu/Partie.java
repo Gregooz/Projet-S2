@@ -93,7 +93,6 @@ public class Partie {
 			// --> indice rouge = nb_bien_placeCouleur
 			// --> indice blanc = nombre de pion - (nb_bien_placeCouleur +
 			// nb_mauvaise_couleur )
-
 			int nb_indice_blanc = nb_pion - (nb_bien_placeCouleur + nb_mauvaise_couleur);
 
 			// On ajoute les bon pions (blanc).
@@ -102,11 +101,11 @@ public class Partie {
 			}
 			//Ajout des pions rouges
 			for (int i = 0; i < nb_bien_placeCouleur; i++) {
-				this.combi_indice[this.numero_tour].setPionCombinaison(i+ nb_indice_blanc, new PionIndice(new Couleur(8)));
+				this.combi_indice[this.numero_tour].setPionCombinaison(i+ nb_indice_blanc, new PionIndice(new Couleur(2)));
 			}
-
+			
 		}
-
+		//this.combi_indice[this.numero_tour] = this.combinaison.combiIndice(this.combi_Enregistrer[this.numero_tour]);
 		return retour;
 
 	}
@@ -165,7 +164,7 @@ public class Partie {
 		System.out.println("- - - -  " + this.combinaison.toString()
 				+ "  - - - - -\n");
 		String chaine = "";
-
+		
 		for (int i = 0; i <= this.numero_tour; i++) {
 
 			chaine = chaine + i + " -- " + this.combi_Enregistrer[i] + "    "
@@ -177,7 +176,7 @@ public class Partie {
 		} else {
 			System.out.println("Appuyez sur une touche pour continuer...");
 		}
-
+		System.out.println("test: "+this.combinaison.combiIndice(this.combi_Enregistrer[this.numero_tour]));
 	}
 
 	/**
