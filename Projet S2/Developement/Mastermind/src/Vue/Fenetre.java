@@ -1,7 +1,11 @@
 package Vue;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 public class Fenetre extends JFrame
 {
@@ -11,6 +15,7 @@ public class Fenetre extends JFrame
 	private JLabel[][] plateau = new JLabel[8][4];
 	private JLabel[][] indice = new JLabel[8][4];
 	private JLabel[] solution = new JLabel[4];
+	private JLabel back = new JLabel();
 	
 	//IMAGES DE PIONS
 	private ImageIcon pionRed= new ImageIcon(getClass().getResource("img/6.png"));
@@ -56,6 +61,7 @@ public class Fenetre extends JFrame
 		
 		
 		this.setResizable(false);
+		this.setLocationRelativeTo(=);
 		this.setPreferredSize(new Dimension(500, 500));
 		this.setContentPane(principal);
 		this.pack();
@@ -74,8 +80,9 @@ public class Fenetre extends JFrame
 		bouton.add(option);
 		bouton.add(credit);
 		
-		principal.setLayout(null);
-		principal.add(bouton);
+		back.setIcon(new ImageIcon("../Mastermind/img/url.png"));
+		back.add(bouton);
+		principal.add(back);
 	}
 	
 	/**
@@ -131,4 +138,6 @@ public class Fenetre extends JFrame
 	{
 		new Fenetre("Mastermind");
 	}
+	
+	
 }
