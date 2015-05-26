@@ -35,6 +35,9 @@ public class Couleur {
 	public Couleur(int num) {
 		this.numero = num;
 		switch (this.numero) {
+			case -1:
+				this.code = RESET;
+				break;
 			case 1:
 				this.code = BLACK;
 				break;

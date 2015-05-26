@@ -98,6 +98,15 @@ public class Combinaison
 	}
 	
 	/**
+	 * Récupère les pions de la combinaison
+	 * @return un tableau de pion
+	 */
+	public Pion[] getPions()
+	{
+		return this.pion;
+	}
+	
+	/**
 	 * Récupère le pion à un indice donnée.
 	 * @param i L'indice du pion dans la combinaison.
 	 * @return Le pion à l'indice i.
@@ -208,24 +217,34 @@ public class Combinaison
 	 */
 		public Combinaison combiIndice(Combinaison combinaison) {
 			int pion_equi =0;
-			Combinaison copie = this;
+			Combinaison copie = new Combinaison(this.nombrePion);
+			copie.setPionCombinaison(this.pion);
+			
+			Combinaison combiCopie = new Combinaison(this.nombrePion);
+			combiCopie.setPionCombinaison(combinaison.getPions());
+			
 			int pion_blanc = 0;
 			
 			for (int i = 0; i< this.nombrePion ; i++) {
-				if ( combinaison.getPion(i).equals(copie.pion[i]) ) {
+				if ( combiCopie.getPion(i).equals(copie.pion[i]) ) {
 					pion_equi = pion_equi+1;
-					copie.setPionCombinaison(i, null);
+					copie.setPionCombinaison(i, new Pion(new Couleur(-1)));
+					combiCopie.setPionCombinaison(i, new Pion(new Couleur(-1)));
 				}
 			}
-			
+
+			System.out.println("copie sans rouge: " + copie.toString() +"nb pions: "+copie.getNombrePion());
+			System.out.println("Combi sans rouge: " + combiCopie.toString() +"nb pions: "+copie.getNombrePion());
 			for (int i =0; i <this.nombrePion; i++){
-				for (int j = 0; j<combinaison.nombrePion; j++){
-					if (combinaison.getPion(j).equals(this.pion[i]) ) {
+				for (int j = 0; j<combiCopie.nombrePion; j++){
+					if (combiCopie.getPion(j).equals(copie.getPion(i)) && combiCopie.getPion(i).getCouleur().getNum() != -1 ) {
 						pion_blanc = pion_blanc +1;
 						}		
 				}
 			}
-			Combinaison combiIndice = new Combinaison();
+			// A partir d'un moment il enlève toute la suite de combiCopie a couleur -1
+			System.out.println("Pion blanc: "+ pion_blanc);
+			Combinaison combiIndice = new Combinaison(this.nombrePion);
 			for (int i = 0; i< pion_equi ; i++) {
 				combiIndice.setPionCombinaison(i, new Pion(new Couleur(2)));
 			}

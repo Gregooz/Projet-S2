@@ -75,38 +75,38 @@ public class Partie {
 		 * plac�s
 		 */
 		int nb_pion = this.combinaison.getNombrePion();
-		this.combi_indice[this.numero_tour] = new Combinaison();
+		//this.combi_indice[this.numero_tour] = new Combinaison();
 		// this.combi_indice[this.numero_tour] = new
 		// Combinaison(Couleur.RED,Couleur.RED,Couleur.RED,Couleur.RED);
 
 		boolean retour = false;
 
-		if (this.combi_Enregistrer[this.numero_tour].equals(this.combinaison)) {
-			retour = true;
-			this.combi_indice[this.numero_tour] = new Combinaison(new Couleur(2),new Couleur(2), new Couleur(2), new Couleur(2));
-			
-		} else {
-			// On recherche les indices rouge et blanc
-			int nb_bien_placeCouleur = this.combinaison.getNbBienPlaceCouleur(this.combi_Enregistrer[this.numero_tour]);
-			int nb_mauvaise_couleur = this.combinaison.nb_mauvaise_couleur(this.combi_Enregistrer[this.numero_tour]);
-
-			// --> indice rouge = nb_bien_placeCouleur
-			// --> indice blanc = nombre de pion - (nb_bien_placeCouleur +
-			// nb_mauvaise_couleur )
-			int nb_indice_blanc = nb_pion - (nb_bien_placeCouleur + nb_mauvaise_couleur);
-
-			// On ajoute les bon pions (blanc).
-			for (int i = 0; i < nb_indice_blanc; i++) {
-				this.combi_indice[this.numero_tour].setPionCombinaison(i,new PionIndice(new Couleur(7)));
-			}
-			//Ajout des pions rouges
-			for (int i = 0; i < nb_bien_placeCouleur; i++) {
-				this.combi_indice[this.numero_tour].setPionCombinaison(i+ nb_indice_blanc, new PionIndice(new Couleur(2)));
-			}
-			
-		}
-		//this.combi_indice[this.numero_tour] = this.combinaison.combiIndice(this.combi_Enregistrer[this.numero_tour]);
-		return retour;
+//		if (this.combi_Enregistrer[this.numero_tour].equals(this.combinaison)) {
+//			retour = true;
+//			this.combi_indice[this.numero_tour] = new Combinaison(new Couleur(2),new Couleur(2), new Couleur(2), new Couleur(2));
+//			
+//		} else {
+//			// On recherche les indices rouge et blanc
+//			int nb_bien_placeCouleur = this.combinaison.getNbBienPlaceCouleur(this.combi_Enregistrer[this.numero_tour]);
+//			int nb_mauvaise_couleur = this.combinaison.nb_mauvaise_couleur(this.combi_Enregistrer[this.numero_tour]);
+//
+//			// --> indice rouge = nb_bien_placeCouleur
+//			// --> indice blanc = nombre de pion - (nb_bien_placeCouleur +
+//			// nb_mauvaise_couleur )
+//			int nb_indice_blanc = nb_pion - (nb_bien_placeCouleur + nb_mauvaise_couleur);
+//
+//			// On ajoute les bon pions (blanc).
+//			for (int i = 0; i < nb_indice_blanc; i++) {
+//				this.combi_indice[this.numero_tour].setPionCombinaison(i,new PionIndice(new Couleur(7)));
+//			}
+//			//Ajout des pions rouges
+//			for (int i = 0; i < nb_bien_placeCouleur; i++) {
+//				this.combi_indice[this.numero_tour].setPionCombinaison(i+ nb_indice_blanc, new PionIndice(new Couleur(2)));
+//			}
+//			
+//		}
+		this.combi_indice[this.numero_tour] = this.combinaison.combiIndice(this.combi_Enregistrer[this.numero_tour]);
+		return false;
 
 	}
 
