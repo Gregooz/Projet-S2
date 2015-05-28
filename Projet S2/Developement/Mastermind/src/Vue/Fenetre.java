@@ -1,45 +1,40 @@
 package Vue;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
 
 public class Fenetre extends JFrame
 {
 	//CONTENEURS
-	private JPanel principal = new JPanel();
-	private JPanel bouton= new JPanel();
+	private JPanel menu = new JPanel();
+	private JPanel boutonMenu = new JPanel();
+	private JLabel back = new JLabel();
+	private JPanel jeu = new JPanel();
+	private JPanel boutonJeu = new JPanel();
 	private JLabel[][] plateau = new JLabel[8][4];
 	private JLabel[][] indice = new JLabel[8][4];
 	private JLabel[] solution = new JLabel[4];
-	private JLabel back = new JLabel();
 	
 	//IMAGES DE PIONS
-	private ImageIcon pionRed= new ImageIcon(getClass().getResource("img/6.png"));
-	private ImageIcon pionBlue= new ImageIcon(getClass().getResource("img/1.png"));
-	private ImageIcon pionGreen= new ImageIcon(getClass().getResource("img/3.png"));
-	private ImageIcon pionOrange= new ImageIcon(getClass().getResource("img/4.png"));
-	private ImageIcon pionCyan= new ImageIcon(getClass().getResource("img/2.png"));
-	private ImageIcon pionPurple= new ImageIcon(getClass().getResource("img/5.png"));
-//	private ImageIcon pionIndicR= new ImageIcon(getClass().getResource("img/indicR.png"));
-//	private ImageIcon pionIndicB= new ImageIcon(getClass().getResource("img/indicB.png"));
-	private ImageIcon pionVide = new ImageIcon(getClass().getResource("img/8.png"));
+	private ImageIcon pionRed= new ImageIcon("../Mastermind/img/6.png");
+	private ImageIcon pionBlue= new ImageIcon("../Mastermind/img/1.png");
+	private ImageIcon pionGreen= new ImageIcon("../Mastermind/img/3.png");
+	private ImageIcon pionOrange= new ImageIcon("../Mastermind/img/4.png");
+	private ImageIcon pionCyan= new ImageIcon("../Mastermind/img/2.png");
+	private ImageIcon pionPurple= new ImageIcon("../Mastermind/img/5.png");
+//	private ImageIcon pionIndicR= new ImageIcon("../Mastermind/img/indicR.png");
+//	private ImageIcon pionIndicB= new ImageIcon("../Mastermind/img/indicB.png");
+	private ImageIcon pionVide = new ImageIcon("../Mastermind/img/7.png");
 //	private ImageIcon indicVide = new ImageIcon("img/indicVide.png");
-	
-	
-	
-	private ImageIcon[] pions;
-	
+				
 	//BOUTTONS DES PIONS
-	private JButton boutonRed = new JButton(pionRed);
-	private JButton boutonBlue = new JButton(pionBlue);
-	private JButton boutonGreen = new JButton(pionGreen);
-	private JButton boutonOrange = new JButton(pionOrange);
-	private JButton boutonCyan = new JButton(pionCyan);
-	private JButton boutonPurple = new JButton(pionPurple);
+	private JButton boutonJeuRed = new JButton(pionRed);
+	private JButton boutonJeuBlue = new JButton(pionBlue);
+	private JButton boutonJeuGreen = new JButton(pionGreen);
+	private JButton boutonJeuOrange = new JButton(pionOrange);
+	private JButton boutonJeuCyan = new JButton(pionCyan);
+	private JButton boutonJeuPurple = new JButton(pionPurple);
 	
 	//BOUTTONS DU MENU PRINICPAL
 	private JButton jouer = new JButton("Jouer");
@@ -47,97 +42,84 @@ public class Fenetre extends JFrame
 	private JButton credit = new JButton("Crédits");
 	
 	
+
 	public Fenetre(String s)
 	{
 		super(s);
-		pions = new ImageIcon[9];
-		for(int i = 1; i < 9; i++)
-		{
-			pions[i] = new ImageIcon("/img/" + i + ".png");
-		}
-		
-		fenetreDemarrage();
+		fenetreMenu();
+		fenetreJeu();
 		
 		
 		
+	
 		this.setResizable(false);
-		this.setLocationRelativeTo(=);
 		this.setPreferredSize(new Dimension(500, 500));
-		this.setContentPane(principal);
+		this.setContentPane(menu);
 		this.pack();
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setVisible(true);
-	}
-//*-------------------------------------------------------------------------*//		
-	/**
-	 * Méthode qui initialise la fenetre principale
-	 */
-	public void fenetreDemarrage()
-	{
-		bouton.setLayout(new GridLayout(3, 1, 5, 5));
-		bouton.setBounds(125, 125, 250,250);
-		bouton.add(jouer);
-		bouton.add(option);
-		bouton.add(credit);
+		jeu.setVisible(false);
 		
-		back.setIcon(new ImageIcon("../Mastermind/img/url.png"));
-		back.add(bouton);
-		principal.add(back);
+	}
+		
+	public void fenetreMenu()
+	{
+		boutonMenu.setLayout(new GridLayout(3, 1, 5, 5));
+		boutonMenu.setBounds(167, 167, 167,167);
+		boutonMenu.add(jouer);
+		boutonMenu.add(option);
+		boutonMenu.add(credit);
+		boutonMenu.setBackground(Color.black);
+			
+		back.setIcon(new ImageIcon("../Mastermind/img/back.gif"));
+		back.add(boutonMenu);
+		menu.add(back);
+			
+		ControleurJouer cj = new ControleurJouer(this, jouer);
+		jouer.addActionListener(cj);
+		
+		ControleurCredits cc = new ControleurCredits(this, credit);
+		credit.addActionListener(cc);
+		
+		
+		
+		
 	}
 	
-	/**
-	 * Méthode qui initialise le plateau de jeu avec ses composants et des images dites "vides"
-	 */
-	public void composants()
+	public void fenetreJeu()
 	{
-		bouton.setLayout(new GridLayout(2, 3, 5, 5));
-		
-		//PLATEAU AVEC CASES VIDES
-		for(int i = 0; i < 8; i++)
-		{
-			for(int j = 0; j < 4; j++)
-			{plateau[i][j] = new JLabel(pionVide);}
-		}
-		
-		//INDICES AVEC DES CASES VIDES
-//		for(int i = 0; i < 8; i++)
-//		{
-//			for(int j = 0; j < 4; j++)
-//			{indice[i][j] = new JLabel(indicVide);}
-//		}
-		
-		//SOLUTION AVEC DES CASES VIDES
-		for(int i = 0; i < 4; i++)
-		{solution[i] = new JLabel(pionVide);}
+		jeu.setLayout(new BorderLayout());
+		boutonJeu.setLayout(new GridLayout(3, 2));
 		
 		//AJOUT DES BOUTTONS AU JPANEL
-		bouton.add(boutonRed);
-		bouton.add(boutonBlue);
-		bouton.add(boutonGreen);
-		bouton.add(boutonOrange);
-		bouton.add(boutonCyan);
-		bouton.add(boutonPurple);
+		boutonJeu.add(boutonJeuRed);
+		boutonJeu.add(boutonJeuBlue);
+		boutonJeu.add(boutonJeuGreen);
+		boutonJeu.add(boutonJeuOrange);
+		boutonJeu.add(boutonJeuCyan);
+		boutonJeu.add(boutonJeuPurple);
 		
-		//AJOUT DES COMPOSANTES A LA FENETRE
-		for(int i = 0; i < 10; i++)
-		{
-			for(int j = 0; i < 4; i++)
-			{principal.add(plateau[i][j]);}
-		}
+		jeu.add(boutonJeu, BorderLayout.EAST);
 		
-		for(int i = 0; i < 10; i++)
-		{
-			for(int j = 0; i < 4; i++)
-			{principal.add(indice[i][j]);}
-		}
-		for(int i = 0; i < 4; i++)
-		{principal.add(solution[i]);}
+		ControleurFrame cf = new ControleurFrame(this, jeu);
+		jeu.addKeyListener(cf);
+		
+	}
+	
+	public void changerPanel()
+	{
+		setContentPane(jeu);
+		jeu.setVisible(true);
+	}
+	
+	public void revenirMenu()
+	{
+		setContentPane(menu);
+		jeu.setVisible(false);
 	}
 	
 	public static void main(String[] args)
 	{
 		new Fenetre("Mastermind");
 	}
-	
-	
 }
